@@ -48,7 +48,7 @@
   		graphics.enable = true;
   	};
 
-  	services.printing.enable = true;
+  	#services.printing.enable = true;
 
    	services.pipewire = {
      		enable = true;
