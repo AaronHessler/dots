@@ -40,7 +40,7 @@
 			size = 22;
 			gtk.enable = true;
 			x11.enable = true;
-			name = "Posy_Cursor";
+			name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
 			package = pkgs.posy-cursors;
 		};
 	};

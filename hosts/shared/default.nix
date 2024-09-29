@@ -27,10 +27,11 @@
 		firefox
 		slurp
 		grim
-		wl-clipboard-rs
+		wl-clipboard
 		hyprcursor
 		nautilus
 		gnome-builder
+		eog # Image Viewer (Gnome)
   	];  
 
   	programs.hyprland = {
