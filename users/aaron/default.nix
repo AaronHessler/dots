@@ -8,6 +8,7 @@
 		discord
 		git
 		vscode
+		hyprcursor
 	];
 
 	programs = {
@@ -34,6 +35,14 @@
 		inherit stateVersion;
 		username = user;
 		homeDirectory = "/home/${user}";
+
+		pointerCursor = { # TODO: Move to shared. (Implement shared.)
+			size = 22;
+			gtk.enable = true;
+			x11.enable = true;
+			name = "Posy_Cursor";
+			package = pkgs.posy-cursors;
+		};
 	};
 
 	gtk = {

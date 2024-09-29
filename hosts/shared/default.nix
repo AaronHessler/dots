@@ -48,6 +48,7 @@
   		graphics.enable = true;
   	};
 
+	# NOTICE: Disabled CUPS because it has a newly discovered vulnerability.
   	#services.printing.enable = true;
 
    	services.pipewire = {
