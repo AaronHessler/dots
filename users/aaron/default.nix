@@ -9,6 +9,7 @@
 		firefox
 		amberol
 		hyprpaper
+		gnome-maps
 	];
 
 	services.hyprpaper = {
