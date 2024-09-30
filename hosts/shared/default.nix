@@ -1,5 +1,4 @@
 { config, lib, pkgs, stateVersion, ... }:
-
 {
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -18,26 +17,52 @@
 		keyMap = "de-latin1";
 	};
 
-
   	environment.systemPackages = with pkgs; [
-    		neovim
-    		kitty
-    		neofetch
+    	neovim
+    	neofetch
 		home-manager
-		firefox
-		slurp
-		grim
-		wl-clipboard
-		hyprcursor
-		nautilus
-		gnome-builder
-		eog # Image Viewer (Gnome)
-  	];  
+		nerdfonts
 
-  	programs.hyprland = {
-  		enable = true;
-		xwayland.enable = true;
+		# JS Development
+		deno # JS Runtime
+		pnpm
+		nodejs
+
+		# Rust Development
+		cargo
+		rustc
+		gcc
+
+		# Startup sound
+		alsa-utils
+  	];  
+	   
+   	services.pipewire = {
+     		enable = true;
+     		pulse.enable = true;
+   	};
+
+	# Startup sound
+	systemd.services.startupSound = {
+		enable = false; # TODO: Make this work
+    	description = "startup sound";
+    	wants = ["sound.target"];
+      	after = ["sound.target"];
+      	wantedBy = ["sound.target"];
+    	serviceConfig = {
+    	  Type = "oneshot";
+    	  ExecStart = "${pkgs.alsa-utils}/bin/aplay ${./assets/audio/boot.wav}";
+		  RemainAfterExit = false;
+    	};
   	};
+
+	users.defaultUserShell = pkgs.zsh;
+
+	programs.zsh = {
+		enable = true;
+		enableCompletion = true;
+		autosuggestions.enable = true;
+	};
 
 	programs.nh = {
 		enable = true;
@@ -47,15 +72,13 @@
 
   	hardware = {
   		graphics.enable = true;
+		graphics.enable32Bit = true;
+		pulseaudio.support32Bit = true;
   	};
 
 	# NOTICE: Disabled CUPS because it has a newly discovered vulnerability.
   	#services.printing.enable = true;
 
-   	services.pipewire = {
-     		enable = true;
-     		pulse.enable = true;
-   	};
 
   	services.libinput.enable = true;
 
@@ -66,6 +89,5 @@
    	};
 
   	system.stateVersion = stateVersion;
-
 }
 

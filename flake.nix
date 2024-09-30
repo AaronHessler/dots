@@ -14,12 +14,13 @@
   let
   	globalUsers = import ./hosts/users/global;
   	sharedHost = import ./hosts/shared;
+  	sharedHome = import ./users/shared;
 	system = "x86_64-linux";
 	stateVersion = "24.05";
 	mkHost = {
 		modules,
 	}: nixpkgs.lib.nixosSystem {
-		specialArgs = { inherit stateVersion; };
+		specialArgs = { inherit stateVersion system; };
 		inherit system;
 		modules = [ globalUsers sharedHost ] ++ modules;
 	};
@@ -32,7 +33,7 @@
 			inherit system;
 			config.allowUnfree = true;
 		};
-		modules = [] ++ modules;
+		modules = [ sharedHome ] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user;};
 	};
   in

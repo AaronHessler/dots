@@ -1,14 +1,12 @@
 { pkgs, stateVersion, user, ... }: {
 	home.packages = with pkgs; [
-		hello
 		spotify
-		whatsapp-for-linux
-		albert
+		ferdium
 		obsidian
 		discord
-		git
 		vscode
-		hyprcursor
+		steam
+		firefox
 	];
 
 	programs = {
@@ -23,7 +21,7 @@
 
 		gh = {
 			enable = true;
-			settings = {
+			settings = { # Don't touch, works, no idea why.
 				version = "1";
 				prompt = "enabled";
 				git_protocol = "https";
@@ -31,23 +29,6 @@
 		};
 	};
 
-	home = {
-		inherit stateVersion;
-		username = user;
-		homeDirectory = "/home/${user}";
 
-		pointerCursor = { # TODO: Move to shared. (Implement shared.)
-			size = 22;
-			gtk.enable = true;
-			x11.enable = true;
-			name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
-			package = pkgs.posy-cursors;
-		};
-	};
-
-	gtk = {
-		enable = true;
-	};
-
-	home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
+	home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf; # Translate into nix
 }
