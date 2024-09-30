@@ -1,4 +1,8 @@
-{ pkgs, stateVersion, user, ... }: {
+{ pkgs, stateVersion, user, ... }:
+let
+	hypr-conf = import ./hypr/hyprland.nix;
+in
+{
 
 	home.packages = with pkgs; [
 		hello
@@ -25,22 +29,27 @@
 		wl-clipboard
 	];
 
-  	#wayland.windowManager.hyprland = {
-  		#enable = true;
-		#xwayland.enable = true;
-  	#};
+  	wayland.windowManager.hyprland = {
+  		enable = true;
+		xwayland.enable = true;
+		settings = hypr-conf;
+  	};
 
-	home = { # TODO: Move to shared. (Implement shared.)
+	home = {
 		inherit stateVersion;
 		username = user;
 		homeDirectory = "/home/${user}";
 
+		# Cursor Theme
 		pointerCursor = { 
 			size = 22;
 			gtk.enable = true;
 			x11.enable = true;
 			name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
 			package = pkgs.posy-cursors;
+		};
+		sessionVariables = {
+			HYPRCURSOR_THEME = "Posy_Cursor";
 		};
 
 	};
