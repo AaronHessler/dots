@@ -130,7 +130,7 @@
         };
 
         touchpad = {
-            natural_scroll = false;
+            natural_scroll = true;
         };
     };
     

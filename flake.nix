@@ -1,5 +1,5 @@
 {
-  description = "ApexOS configuration";
+  description = "ApexOS configurations";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
