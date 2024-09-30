@@ -71,6 +71,8 @@
 		enable = true;
 	};
 
+	programs.dconf.enable = true;
+
 	programs.nh = {
 		enable = true;
 		clean.enable = true;

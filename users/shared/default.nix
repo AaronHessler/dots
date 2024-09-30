@@ -28,6 +28,8 @@ in
 		wl-clipboard
 	];
 
+	dconf.enable = true;
+
 	programs.kitty = {
 		enable = true;
 		font.name = "JetBrainsMono";
