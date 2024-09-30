@@ -7,7 +7,17 @@
 		vscode
 		steam
 		firefox
+		amberol
+		hyprpaper
 	];
+
+	services.hyprpaper = {
+		enable = true;
+		settings = {
+			preload = "${./assets/images/Wallpaper.png}";
+			wallpaper = ",${./assets/images/Wallpaper.png}";
+		};
+	};
 
 	programs = {
 		git = {

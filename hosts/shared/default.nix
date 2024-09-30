@@ -5,6 +5,13 @@
 
   	boot.loader.systemd-boot.enable = true;
   	boot.loader.efi.canTouchEfiVariables = true;
+	boot.kernelParams = ["quiet"];
+
+	boot.plymouth = {
+		enable = true;
+		logo = ./assets/images/logo.png;
+		theme = "breeze";
+	};
 
   	networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
@@ -22,6 +29,8 @@
     	neofetch
 		home-manager
 		nerdfonts
+		zsh
+
 
 		# JS Development
 		deno # JS Runtime
@@ -60,8 +69,6 @@
 
 	programs.zsh = {
 		enable = true;
-		enableCompletion = true;
-		autosuggestions.enable = true;
 	};
 
 	programs.nh = {

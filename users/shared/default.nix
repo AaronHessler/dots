@@ -12,7 +12,6 @@ in
         # Hyprland
 		hyprland
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
-        kitty
 
 		# GNOME App Suite
 		eog # Image Viewer (Gnome)
@@ -28,6 +27,24 @@ in
 		grim
 		wl-clipboard
 	];
+
+	programs.kitty = {
+		enable = true;
+		font.name = "JetBrainsMono";
+	};
+
+	programs.zsh = {
+		enable = true;
+		enableCompletion = true;
+		shellAliases = {
+			nixup = "nh os switch";
+			homeup = "nh home switch";
+		};
+	};
+
+	programs.starship = {
+		enable = true;
+	};
 
   	wayland.windowManager.hyprland = {
   		enable = true;
@@ -56,5 +73,13 @@ in
 
 	gtk = {
 		enable = true;
+		theme = {
+			package = pkgs.adw-gtk3;
+			name = "adw-gtk3";
+		};
+		iconTheme = {
+			package = pkgs.adwaita-icon-theme;
+			name = "Adwaita";
+		};
 	};
 }

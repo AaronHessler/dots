@@ -20,9 +20,6 @@
 
         # Start Albert
         "albert"
-
-        # Hyprpaper
-        "hyprpaper"
     ];
 
     windowrulev2 = [
