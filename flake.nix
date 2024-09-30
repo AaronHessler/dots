@@ -40,6 +40,7 @@
   {
 	nixosConfigurations = {
 		predator = mkHost { modules = [ ./hosts/predator ]; };
+		prey = mkHost { modules = [ ./hosts/prey ]; };
 	};
 	homeConfigurations = {
 		aaron = mkHome { modules = [ ./users/aaron ]; user = "aaron"; };
