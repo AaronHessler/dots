@@ -6,7 +6,12 @@
   	boot.loader.systemd-boot.enable = true;
   	boot.loader.efi.canTouchEfiVariables = true;
 	boot.kernelParams = ["quiet"];
-
+	
+  services.pipewire = {
+     enable = true;
+     pulse.enable = true;
+  };
+  
 	boot.plymouth = {
 		enable = true;
 		logo = ./assets/images/logo.png;
@@ -46,10 +51,6 @@
 		alsa-utils
   	];  
 	   
-   	services.pipewire = {
-     		enable = true;
-     		pulse.enable = true;
-   	};
 
 	# Startup sound
 	systemd.services.startupSound = {

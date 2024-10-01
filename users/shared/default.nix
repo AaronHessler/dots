@@ -18,7 +18,10 @@ in
 		nautilus # Files
 		gnome-builder # IDE
 		decibels # Audio
+		papers # Document Viewer
+		gnome-usage
 
+		
 		# Notifications
 		dunst
 

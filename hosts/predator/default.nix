@@ -7,7 +7,6 @@
     ];
 
 
-
   networking.hostName = "predator";
 
   environment.systemPackages = with pkgs; [
