@@ -10,7 +10,6 @@
 		amberol
 		hyprpaper
 		gnome-maps
-		gnome-calculator
 	];
 
 	services.hyprpaper = {

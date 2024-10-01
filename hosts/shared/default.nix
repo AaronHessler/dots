@@ -3,18 +3,32 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
-	boot.kernelParams = ["quiet"];
+	boot = {
+		kernelParams = [
+			"quiet"
+      		"splash"
+			"boot.shell_on_fail"
+			"loglevel=3"
+			"rd.systemd.show_status=false"
+			"rd.udev.log_level=3"
+			"udev.log_priority=3"
+		];
+		consoleLogLevel = 0;
+		initrd.verbose = false;
+		loader = {
+			#timeout = 0; # Only enable if system is completly stable.
+			systemd-boot.enable = true;
+			efi.canTouchEfiVariables = true;
+		};
+	};
 	
-  services.pipewire = {
-     enable = true;
-     pulse.enable = true;
-  };
+  	services.pipewire = {
+     	enable = true;
+     	pulse.enable = true;
+  	};
   
 	boot.plymouth = {
 		enable = true;
-		logo = ./assets/images/logo.png;
 		theme = "breeze";
 	};
 
