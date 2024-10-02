@@ -2,6 +2,8 @@
 
 Welcome to the ApexOS dotfiles repository! This repository contains my personal configuration files, optimized for my workflow.
 
+![Banner](./assets/github/banner.png)
+
 ## Features
 
 - [DETAILS COMING SOON]
