@@ -9,7 +9,7 @@
 		firefox
 		amberol
 		hyprpaper
-		gnome-maps
+		krita
 	];
 
 	services.hyprpaper = {
