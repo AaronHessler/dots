@@ -15,8 +15,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Wallpaper.png}";
-			wallpaper = ",${./assets/images/Wallpaper.png}";
+			preload = "${./assets/images/Dragonfly.png}";
+			wallpaper = ",${./assets/images/Dragonfly.png}";
 		};
 	};
 
