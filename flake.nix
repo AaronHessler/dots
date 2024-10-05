@@ -5,11 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
     	url = "github:nix-community/home-manager";
-	inputs.nixpkgs.follows = "nixpkgs";
+		inputs.nixpkgs.follows = "nixpkgs";
     };
+	xremap.url = "github:xremap/nix-flake";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, xremap }: 
 
   let
   	globalUsers = import ./hosts/users/global;
@@ -33,7 +34,7 @@
 			inherit system;
 			config.allowUnfree = true;
 		};
-		modules = [ sharedHome ] ++ modules;
+		modules = [ sharedHome xremap.homeManagerModules.default ] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user;};
 	};
   in

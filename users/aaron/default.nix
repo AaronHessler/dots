@@ -5,18 +5,24 @@
 		obsidian
 		discord
 		vscode
-		steam
 		firefox
 		amberol
 		hyprpaper
 		krita
+		btop
+		steam
+		modrinth-app
+		overskride
+		whatsapp-for-linux
 	];
+
+
 
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Dragonfly.png}";
-			wallpaper = ",${./assets/images/Dragonfly.png}";
+			preload = "${./assets/images/Wallpaper.png}";
+			wallpaper = ",${./assets/images/Wallpaper.png}";
 		};
 	};
 

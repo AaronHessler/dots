@@ -21,6 +21,7 @@ in
 		papers # Document Viewer
 		gnome-usage
 
+		yazi
 		
 		# Notifications
 		dunst
@@ -44,6 +45,26 @@ in
 		shellAliases = {
 			nixup = "nh os switch";
 			homeup = "nh home switch";
+		};
+	};
+
+	services.xremap = {
+		enable = true;
+		withWlroots = true;
+		config = {
+			modmap = [
+				{
+					name = "System Keybinds";
+					remap = {
+						CapsLock = 
+						{
+							held = "leftctrl";
+							alone = "esc";
+							alone_timeout_millis = 150;
+						};
+					};
+				}
+			];
 		};
 	};
 
@@ -79,8 +100,8 @@ in
 	gtk = {
 		enable = true;
 		theme = {
-			package = pkgs.adw-gtk3;
-			name = "adw-gtk3";
+			package = pkgs.gnome-themes-extra;
+			name = "Adwaita-light";
 		};
 		iconTheme = {
 			package = pkgs.adwaita-icon-theme;

@@ -3,8 +3,20 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	# Drives show up in nautilus.
+	services.udisks2.enable = true;
+	security.polkit.enable = true;
+	services.gvfs.enable = true;
+
+	hardware.bluetooth.enable = true; # enables support for Bluetooth
+  	hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+	hardware.uinput.enable = true;
+
+
 	boot = {
 		kernelParams = [
+			"uinput"
 			"quiet"
       		"splash"
 			"boot.shell_on_fail"
@@ -98,6 +110,11 @@
   		graphics.enable = true;
 		graphics.enable32Bit = true;
 		pulseaudio.support32Bit = true;
+
+		opengl = {
+			enable = true;
+			driSupport32Bit = true;
+		};
   	};
 
 	# NOTICE: Disabled CUPS because it has a newly discovered vulnerability.
