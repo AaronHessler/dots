@@ -11,7 +11,6 @@
 		krita
 		btop
 		steam
-		modrinth-app
 		overskride
 		whatsapp-for-linux
 	];
