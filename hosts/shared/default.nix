@@ -8,11 +8,11 @@
 	security.polkit.enable = true;
 	services.gvfs.enable = true;
 
-	hardware.bluetooth.enable = true; # enables support for Bluetooth
-  	hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+	hardware.bluetooth.enable = true;
+  	hardware.bluetooth.powerOnBoot = true;
 
+	# For xremap
 	hardware.uinput.enable = true;
-
 
 	boot = {
 		kernelParams = [
