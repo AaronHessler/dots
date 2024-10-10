@@ -13,8 +13,9 @@
 		steam
 		overskride
 		whatsapp-for-linux
+		chromium
+		osu-lazer # Drawing tablet coordination
 	];
-
 
 
 	services.hyprpaper = {
@@ -34,6 +35,12 @@
 				defaultBranch = "main";	
 			};
 		};
+
+    	java = {
+  			enable = true;
+  			package = pkgs.jdk21;
+		};
+
 
 		gh = {
 			enable = true;

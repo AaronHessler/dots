@@ -50,6 +50,11 @@
 
   	fonts.enableDefaultPackages = true;
 
+	programs.coolercontrol = {
+		enable = true;
+		nvidiaSupport = true;
+	};
+
 	# i18n.defaultLocale = "en_US.UTF-8";
 	console = {
 		keyMap = "de-latin1";
@@ -68,13 +73,18 @@
 		pnpm
 		nodejs
 
+		darling
+		opendrop
+
 		# Rust Development
 		cargo
 		rustc
+		rustup
 		gcc
 
 		# Startup sound
 		alsa-utils
+		nushell
   	];  
 	   
 
@@ -110,6 +120,11 @@
   		graphics.enable = true;
 		graphics.enable32Bit = true;
 		pulseaudio.support32Bit = true;
+
+		opentabletdriver = {
+			enable = false;
+			daemon.enable = false;
+		};
 
 		opengl = {
 			enable = true;

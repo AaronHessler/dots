@@ -21,7 +21,11 @@ in
 		papers # Document Viewer
 		gnome-usage
 
+		font-manager
+
 		yazi
+
+		figma-linux
 		
 		# Notifications
 		dunst
@@ -45,6 +49,9 @@ in
 		shellAliases = {
 			nixup = "nh os switch";
 			homeup = "nh home switch";
+			
+			# typos be gone!
+			claer = "clear";
 		};
 	};
 

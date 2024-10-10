@@ -182,7 +182,7 @@
 
         # Screenshot
 
-        "$mainMod SHIFT, S, exec, slurp | grim -g - - | wl-copy -p # p flag is actually really important!"
+        "$mainMod SHIFT, S, exec, slurp | grim -g - - | wl-copy" # p flag is actually really important!
 
 
         # Example special workspace (scratchpad)
