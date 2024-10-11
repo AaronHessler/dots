@@ -14,10 +14,9 @@ in
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
 
 		# GNOME App Suite
-		eog # Image Viewer (Gnome)
-		nautilus # Files
+		gnome.eog # Image Viewer (Gnome)
+		gnome.nautilus # Files
 		gnome-builder # IDE
-		decibels # Audio
 		papers # Document Viewer
 		gnome-usage
 
@@ -25,8 +24,6 @@ in
 
 		yazi
 
-		figma-linux
-		
 		# Notifications
 		dunst
 
@@ -49,6 +46,8 @@ in
 		shellAliases = {
 			nixup = "nh os switch";
 			homeup = "nh home switch";
+			hy = "Hyprland";
+			nv = "nvim";
 			
 			# typos be gone!
 			claer = "clear";
@@ -106,13 +105,10 @@ in
 
 	gtk = {
 		enable = true;
-		theme = {
-			package = pkgs.gnome-themes-extra;
-			name = "Adwaita-light";
-		};
+		#theme = {};
 		iconTheme = {
-			package = pkgs.adwaita-icon-theme;
-			name = "Adwaita";
+			package = pkgs.morewaita-icon-theme;
+			name = "moreadwaita";
 		};
 	};
 }

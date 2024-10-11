@@ -14,8 +14,27 @@
 		overskride
 		whatsapp-for-linux
 		chromium
-		osu-lazer # Drawing tablet coordination
+		#osu-lazer # Drawing tablet coordination
+
+		figma-agent
 	];
+
+
+	# Figma
+	systemd.user.services.figma-agent = {
+  		Unit = {
+    		Description = "Figma Agent";
+  		};
+  		Service = {
+			Enable = true;
+    		ExecStart = "${pkgs.figma-agent}/bin/figma-agent";
+    		Restart = "on-failure";
+  		};
+  		Install = {
+    		WantedBy = [ "default.target" ];
+  		};
+	};
+
 
 
 	services.hyprpaper = {
