@@ -80,6 +80,7 @@
 		cargo
 		rustc
 		rustup
+		wasm-pack
 		gcc
 
 		# Startup sound

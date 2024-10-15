@@ -31,6 +31,8 @@ in
 		slurp
 		grim
 		wl-clipboard
+
+		yt-dlp
 	];
 
 	dconf.enable = true;
@@ -48,6 +50,8 @@ in
 			homeup = "nh home switch";
 			hy = "Hyprland";
 			nv = "nvim";
+
+			download = "yt-dlp";
 			
 			# typos be gone!
 			claer = "clear";
