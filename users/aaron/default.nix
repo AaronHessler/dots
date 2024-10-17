@@ -17,6 +17,7 @@
 		#osu-lazer # Drawing tablet coordination
 		flatpak
 		figma-agent
+		figlet
 	];
 
 

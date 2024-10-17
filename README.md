@@ -14,6 +14,7 @@ Welcome to the ApexOS dotfiles repository! This repository contains my personal 
 - `homeup`: Rebuild the home configuration.
 - `hy`: Launch Hyprland.
 - `nv`: Launch Neovim.
+- `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - `download`: Download a video from a website of your choice.
 
 

@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
 		modrinth-app
     pkgs.python312Packages.liquidctl
+    ollama
   ];  
 
 

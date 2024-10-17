@@ -42,6 +42,11 @@ in
 		font.name = "JetBrainsMono";
 	};
 
+	programs.zoxide = {
+		enable = true;
+		enableZshIntegration = true;
+	};
+
 	programs.zsh = {
 		enable = true;
 		enableCompletion = true;
@@ -50,6 +55,7 @@ in
 			homeup = "nh home switch";
 			hy = "Hyprland";
 			nv = "nvim";
+			cd = "z"; # Replace cd with zoxide
 
 			download = "yt-dlp";
 			
