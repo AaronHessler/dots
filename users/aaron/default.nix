@@ -18,6 +18,8 @@
 		flatpak
 		figma-agent
 		figlet
+
+		jetbrains-mono
 	];
 
 

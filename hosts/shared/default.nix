@@ -60,11 +60,15 @@
 		keyMap = "de-latin1";
 	};
 
+	fonts.fonts = with pkgs; [
+		nerdfonts
+		google-fonts
+	];
+
   	environment.systemPackages = with pkgs; [
     	neovim
     	neofetch
 		home-manager
-		nerdfonts
 		zsh
 
 
