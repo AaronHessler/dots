@@ -115,10 +115,14 @@ in
 
 	gtk = {
 		enable = true;
-		#theme = {};
+		theme = {
+			name = "Lucid-Grey-Dark-Compact";
+		};
 		iconTheme = {
-			package = pkgs.morewaita-icon-theme;
-			name = "moreadwaita";
+			package = pkgs.gnome.adwaita-icon-theme;
+			name = "Adwaita";
 		};
 	};
+	home.sessionVariables.GTK_THEME = "Lucid-Grey-Dark-Compact";
+	home.file.".themes".source = ./gtk;
 }
