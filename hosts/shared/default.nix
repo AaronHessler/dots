@@ -3,6 +3,9 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	# Make executables work
+	programs.nix-ld.enable = true;
+
 	# Drives show up in nautilus.
 	services.udisks2.enable = true;
 	security.polkit.enable = true;
