@@ -8,9 +8,10 @@
 		inputs.nixpkgs.follows = "nixpkgs";
     };
 	xremap.url = "github:xremap/nix-flake";
+	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, xremap }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects }: 
 
   let
   	globalUsers = import ./hosts/users/global;
@@ -36,7 +37,7 @@
 			config.allowUnfree = true;
 		};
 		modules = [ sharedHome xremap.homeManagerModules.default ] ++ modules;
-		extraSpecialArgs = {inherit stateVersion user;};
+		extraSpecialArgs = {inherit stateVersion user terminaltexteffects;};
 	};
   in
   {

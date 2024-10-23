@@ -1,10 +1,12 @@
-{ pkgs, stateVersion, user, ... }:
+{ pkgs, stateVersion, user, terminaltexteffects, config, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
+	username = config.home.username;
 in
-{
+{ 
 
 	home.packages = with pkgs; [
+	terminaltexteffects.packages.x86_64-linux.default
 		hello
 		albert # Replace?
 		git # Move
@@ -62,6 +64,10 @@ in
 			# typos be gone!
 			claer = "clear";
 		};
+		initExtra = ''
+			echo "\n"
+			figlet 'Welcome back ${username}' -f cybersmall -c | tte --no-color --frame-rate 120 --anchor-canvas c --anchor-text c unstable
+		''; # Sick greeting animation
 	};
 
 	services.xremap = {
