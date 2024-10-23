@@ -127,7 +127,6 @@
   	hardware = {
   		#graphics.enable = true;
 		#graphics.enable32Bit = true;
-		pulseaudio.support32Bit = true;
 
 		opentabletdriver = {
 			enable = false;

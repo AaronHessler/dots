@@ -16,6 +16,7 @@
         # Startup apps
         "[workspace 2 silent] spotify"
         "[workspace 1 silent] obsidian"
+        "[workspace 1 silent] kitty"
         #"[workspace 1 silent] $browser"
 
         # Start Albert

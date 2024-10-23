@@ -16,6 +16,9 @@
   ];  
 
 
+		pulseaudio.support32Bit = true; # Enable sound
+
+
   # For Hyprland
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";

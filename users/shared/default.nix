@@ -66,7 +66,7 @@ in
 		};
 		initExtra = ''
 			echo "\n"
-			figlet 'Welcome back ${username}' -f cybersmall -c | tte --no-color --frame-rate 120 --anchor-canvas c --anchor-text c unstable
+			figlet 'Welcome back ${username}' -f cybersmall | tte --no-color --frame-rate 120 unstable
 		''; # Sick greeting animation
 	};
 

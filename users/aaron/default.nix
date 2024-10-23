@@ -20,6 +20,7 @@
 		figlet
 
 		jetbrains-mono
+		geogebra
 	];
 
 
