@@ -62,14 +62,15 @@ in
 			cd = "z"; # Replace cd with zoxide
 
 			download = "yt-dlp";
+
+			greet = ''
+				echo "\n"
+				figlet 'Welcome back ${username}' -f cybersmall | tte --no-color --frame-rate 120 unstable
+			'';
 			
 			# typos be gone!
 			claer = "clear";
 		};
-		initExtra = ''
-			echo "\n"
-			figlet 'Welcome back ${username}' -f cybersmall | tte --no-color --frame-rate 120 unstable
-		''; # Sick greeting animation
 	};
 
 	services.flatpak.enable = true;
