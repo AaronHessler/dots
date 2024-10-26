@@ -9,9 +9,10 @@
     };
 	xremap.url = "github:xremap/nix-flake";
 	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
+	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects, nix-flatpak }: 
 
   let
   	globalUsers = import ./hosts/users/global;
@@ -46,7 +47,7 @@
 		prey = mkHost { modules = [ ./hosts/prey ]; };
 	};
 	homeConfigurations = {
-		aaron = mkHome { modules = [ ./users/aaron ]; user = "aaron"; };
+		aaron = mkHome { modules = [ ./users/aaron nix-flatpak.homeManagerModules.nix-flatpak ]; user = "aaron"; };
 	};
   };
 }

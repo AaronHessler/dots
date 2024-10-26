@@ -15,7 +15,6 @@
 		whatsapp-for-linux
 		chromium
 		#osu-lazer # Drawing tablet coordination
-		flatpak
 		figma-agent
 		figlet
 

@@ -35,7 +35,9 @@ in
 		wl-clipboard
 
 		yt-dlp
+
 	];
+
 
 	dconf.enable = true;
 
@@ -69,6 +71,8 @@ in
 			figlet 'Welcome back ${username}' -f cybersmall | tte --no-color --frame-rate 120 unstable
 		''; # Sick greeting animation
 	};
+
+	services.flatpak.enable = true;
 
 	services.xremap = {
 		enable = true;

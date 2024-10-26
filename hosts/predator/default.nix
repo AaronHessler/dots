@@ -16,7 +16,7 @@
   ];  
 
 
-		pulseaudio.support32Bit = true; # Enable sound
+		#pulseaudio.support32Bit = true; # Enable sound
 
 
   # For Hyprland

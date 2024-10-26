@@ -93,8 +93,10 @@
 		# Startup sound
 		alsa-utils
 		nushell
+
+		flatpak
   	];  
-	   
+
 
 	# Startup sound
 	systemd.services.startupSound = {
