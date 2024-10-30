@@ -1,7 +1,6 @@
 { pkgs, stateVersion, user, terminaltexteffects, config, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
-	username = config.home.username;
 in
 { 
 
@@ -43,7 +42,7 @@ in
 
 	programs.kitty = {
 		enable = true;
-		font.name = "JetBrainsMono";
+		#font.name = "JetBrainsMono";
 	};
 
 	programs.zoxide = {
@@ -65,7 +64,7 @@ in
 
 			greet = ''
 				echo "\n"
-				figlet 'Welcome back ${username}' -f cybersmall | tte --no-color --frame-rate 120 unstable
+				figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 unstable
 			'';
 			
 			# typos be gone!
@@ -111,29 +110,49 @@ in
 		homeDirectory = "/home/${user}";
 
 		# Cursor Theme
-		pointerCursor = { 
-			size = 22;
-			gtk.enable = true;
-			x11.enable = true;
-			name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
-			package = pkgs.posy-cursors;
-		};
+		#pointerCursor = { 
+			#gtk.enable = true;
+			#x11.enable = true;
+			#name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
+			#package = pkgs.posy-cursors;
+		#};
 		sessionVariables = {
-			HYPRCURSOR_THEME = "Posy_Cursor";
+			#HYPRCURSOR_THEME = "Posy_Cursor";
 		};
 
 	};
 
 	gtk = {
 		enable = true;
-		theme = {
-			name = "Lucid-Grey-Dark";
-		};
 		iconTheme = {
 			package = pkgs.gnome.adwaita-icon-theme;
 			name = "Adwaita";
 		};
 	};
-	home.sessionVariables.GTK_THEME = "Lucid-Grey-Dark";
-	home.file.".themes".source = ./gtk;
+
+
+	stylix = {
+		enable = true;
+		base16Scheme = ./style/colors.yaml;
+		image = ./assets/Dragonfly.png;
+		cursor = {
+			package = pkgs.posy-cursors;
+			name = "Posy_Cursor";
+		};
+		autoEnable = true;
+		fonts = {
+			sansSerif = {
+				package = pkgs.google-fonts;
+				name = "Syne";
+			};
+			monospace = {
+				package = pkgs.nerdfonts;
+				name = "JetBrainsMono Nerd Font";
+			};
+		};
+		targets = {
+			hyprland.enable = false;
+			hyprpaper.enable = false;
+		};
+	};
 }

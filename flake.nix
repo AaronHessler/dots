@@ -10,9 +10,10 @@
 	xremap.url = "github:xremap/nix-flake";
 	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+	stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects, nix-flatpak }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects, nix-flatpak, stylix }: 
 
   let
   	globalUsers = import ./hosts/users/global;
@@ -37,7 +38,12 @@
 			inherit system;
 			config.allowUnfree = true;
 		};
-		modules = [ sharedHome xremap.homeManagerModules.default ] ++ modules;
+		modules = [
+			sharedHome
+			xremap.homeManagerModules.default
+			nix-flatpak.homeManagerModules.nix-flatpak
+			stylix.homeManagerModules.stylix
+		];
 		extraSpecialArgs = {inherit stateVersion user terminaltexteffects;};
 	};
   in
@@ -47,7 +53,7 @@
 		prey = mkHost { modules = [ ./hosts/prey ]; };
 	};
 	homeConfigurations = {
-		aaron = mkHome { modules = [ ./users/aaron nix-flatpak.homeManagerModules.nix-flatpak ]; user = "aaron"; };
+		aaron = mkHome { modules = [ ./users/aaron ]; user = "aaron"; };
 	};
   };
 }
