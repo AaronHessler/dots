@@ -18,7 +18,6 @@
 		figma-agent
 		figlet
 
-		jetbrains-mono
 		geogebra
 	];
 
@@ -73,7 +72,4 @@
 			};
 		};
 	};
-
-	# Migrated to .nix file (hyprland.nix)
-	#home.file.".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf; # Translate into nix
 }

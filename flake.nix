@@ -43,7 +43,7 @@
 			xremap.homeManagerModules.default
 			nix-flatpak.homeManagerModules.nix-flatpak
 			stylix.homeManagerModules.stylix
-		];
+		] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user terminaltexteffects;};
 	};
   in

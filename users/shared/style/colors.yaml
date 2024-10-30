@@ -4,19 +4,18 @@ author: "Aaron Hessler"
 variant: "dark"
 palette:
   base00: "000000" # Black
-  base01: "404040"
-  base02: "404040"
-  base03: "808080"
-  base04: "808080"
-  base05: "c0c0c0"
-  base06: "c0c0c0"
-  base07: "ffffff" # White
-  base08: "dd0907" # Red
-  base09: "ff6403" # Orange
-  base0A: "fbf305" # Yellow
-  base0B: "1fb714" # Green
-  base0C: "02abea" # Cyan
-  base0D: "0000d3" # Blue
-  base0E: "4700a5" # Purple
-  base0F: "90713a" # Brown
-
+  base01: "000000"
+  base02: "000000"
+  base03: "DCDCDC"
+  base04: "DCDCDC"
+  base05: "DCDCDC"
+  base06: "DCDCDC"
+  base07: "DCDCDC" # White
+  base08: "FF4788" # Red
+  base09: "FFAC47" # Orange
+  base0A: "EDFF47" # Yellow
+  base0B: "97FF47" # Green
+  base0C: "3ADBFF" # Cyan
+  base0D: "47FFDD" # Primary
+  base0E: "8367FF" # Purple
+  base0F: "525252" # IM sPeCiAl
