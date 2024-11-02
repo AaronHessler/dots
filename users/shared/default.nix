@@ -23,6 +23,9 @@ in
 
 		font-manager
 
+		# Web
+		firefox
+
 		yazi
 
 		# Notifications

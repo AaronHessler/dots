@@ -5,7 +5,10 @@
 		obsidian
 		discord
 		vscode
-		firefox
+
+		#Web
+		tor-browser
+
 		amberol
 		hyprpaper
 		krita
