@@ -115,16 +115,15 @@
 
 	users.defaultUserShell = pkgs.nushell;
 
-	programs.zsh = {
-		enable = true;
-	};
-
 	programs.dconf.enable = true;
 
 	programs.nh = {
 		enable = true;
 		clean.enable = true;
-		flake = "/home/aaron/dots";
+	};
+
+	environment.sessionVariables = {
+		FLAKE = "/home/aaron/dots"; # Change this to your location
 	};
 
   	hardware = {

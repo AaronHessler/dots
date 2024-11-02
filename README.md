@@ -39,7 +39,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
    - Format the partitions.
    - Mount the partitions.
 5. Clone this repository into `/home/[username]/dots`.
-6. Update the `nh` flake location accordingly.
+6. Update the `FLAKE` environment variable in your config to reflect its location.
 7. Add your user.
 8. Generate your hardware configuration and append any specific hardware settings to the `hosts` directory.
 9. Add your host entry to the `flake.nix` file.
