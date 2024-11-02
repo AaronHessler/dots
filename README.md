@@ -8,7 +8,11 @@ Welcome to the ApexOS dotfiles repository! This repository contains my personal 
 
 - [DETAILS COMING SOON]
 
-## Shell Aliases
+## Shell 
+
+ApexOS uses [Nushell](https://www.nushell.sh/)
+
+### Aliases
 
 - `nixup`: Rebuild the system configuration.
 - `homeup`: Rebuild the home configuration.

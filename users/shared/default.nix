@@ -47,12 +47,11 @@ in
 
 	programs.zoxide = {
 		enable = true;
-		enableZshIntegration = true;
+		enableNushellIntegration = true;
 	};
 
-	programs.zsh = {
+	programs.nushell = {
 		enable = true;
-		enableCompletion = true;
 		shellAliases = {
 			nixup = "nh os switch";
 			homeup = "nh home switch";
@@ -70,6 +69,11 @@ in
 			# typos be gone!
 			claer = "clear";
 		};
+		extraConfig = ''
+			$env.config = {
+				show_banner: false,
+			}
+		'';
 	};
 
 	services.flatpak.enable = true;

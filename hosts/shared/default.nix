@@ -72,7 +72,6 @@
     	neovim
     	neofetch
 		home-manager
-		zsh
 
 
 		# JS Development
@@ -92,7 +91,8 @@
 
 		# Startup sound
 		alsa-utils
-		nushell
+		
+		xdg-utils # Default, apps etc
 
 		flatpak
   	];  
@@ -112,7 +112,7 @@
     	};
   	};
 
-	users.defaultUserShell = pkgs.zsh;
+	users.defaultUserShell = pkgs.nushell;
 
 	programs.zsh = {
 		enable = true;
