@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, user, terminaltexteffects, config, ... }:
+{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
 in
@@ -25,6 +25,7 @@ in
 
 		# Web
 		firefox
+		inputs.zen-browser.packages."${system}".specific
 
 		yazi
 

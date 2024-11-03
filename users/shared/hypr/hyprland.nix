@@ -9,7 +9,7 @@
 
     # Environment
     "$terminal" = "kitty";
-    "$browser" = "firefox";
+    "$browser" = "zen";
     "$launcher" = "albert show";
 
     exec-once = [

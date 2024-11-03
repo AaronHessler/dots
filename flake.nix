@@ -11,10 +11,19 @@
 	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 	stylix.url = "github:danth/stylix";
+	zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, xremap, terminaltexteffects, nix-flatpak, stylix }: 
-
+  outputs = inputs@{
+	self,
+	nixpkgs,
+	home-manager,
+	xremap,
+	terminaltexteffects,
+	nix-flatpak,
+	stylix,
+	zen-browser
+}: 
   let
   	globalUsers = import ./hosts/users/global;
   	sharedHost = import ./hosts/shared;
@@ -44,7 +53,7 @@
 			nix-flatpak.homeManagerModules.nix-flatpak
 			stylix.homeManagerModules.stylix
 		] ++ modules;
-		extraSpecialArgs = {inherit stateVersion user terminaltexteffects;};
+		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system;};
 	};
   in
   {
