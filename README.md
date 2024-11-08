@@ -20,6 +20,8 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `nv`: Launch Neovim.
 - `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - `download`: Download a video from a website of your choice.
+- `bye`: To power down
+
 
 
 ## Keybinds

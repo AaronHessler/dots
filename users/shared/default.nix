@@ -62,13 +62,14 @@ in
 			hy = "Hyprland";
 			nv = "nvim";
 			cd = "z"; # Replace cd with zoxide
+			bye = "shutdown now";
 
 			download = "yt-dlp";
 
-			greet = ''
-				echo "\n"
-				figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 unstable
-			'';
+			#greet = ''
+				#echo "\n"
+				#figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 unstable
+			#'';
 			
 			# typos be gone!
 			claer = "clear";
