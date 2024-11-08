@@ -121,7 +121,8 @@
 
     # Input
     input = {
-        kb_layout = "de";
+        kb_layout = "ch";
+        kb_variant = "de_mac";
         
         follow_mouse = 1;
         sensitivity = 0; # 0 means no modification
