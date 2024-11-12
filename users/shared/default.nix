@@ -37,6 +37,9 @@ in
 		grim
 		wl-clipboard
 
+		# Color Picker
+		hyprpicker
+
 		yt-dlp
 
 	];

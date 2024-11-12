@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
     	url = "github:nix-community/home-manager";
 		inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +18,7 @@
   outputs = inputs@{
 	self,
 	nixpkgs,
+	nixpkgs-unstable,
 	home-manager,
 	xremap,
 	terminaltexteffects,
@@ -31,13 +33,16 @@
 	system = "x86_64-linux";
 	stateVersion = "24.05";
 
+	unstable-pkgs = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };	
+
 	mkHost = {
 		modules,
 	}: nixpkgs.lib.nixosSystem {
-		specialArgs = { inherit stateVersion system; };
+		specialArgs = { inherit stateVersion system unstable-pkgs; };
 		inherit system;
 		modules = [ globalUsers sharedHost ] ++ modules;
 	};
+
 	mkHome = {
 		modules,
 		user ? "dragonfly",
@@ -55,6 +60,7 @@
 		] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system;};
 	};
+
   in
   {
 	nixosConfigurations = {

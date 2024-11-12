@@ -92,7 +92,7 @@
             "border, 1, 10, default"
             "fade, 1, 3, md3_decel"
             # "layers, 1, 2, md3_decel, slide"
-            "layersIn, 1, 10, menu_decel, slide"
+            "layersIn, 1, 10, menu_decel, popin"
             "layersOut, 1, 1.6, menu_accel"
             "fadeLayersIn, 1, 2, menu_decel"
             "fadeLayersOut, 1, 4.5, menu_accel"
@@ -185,6 +185,7 @@
         # Screenshot
 
         "$mainMod SHIFT, S, exec, slurp | grim -g - - | wl-copy" # p flag is actually really important!
+        "$mainMod SHIFT, C, exec, hyprpicker --autocopy" # p flag is actually really important!
 
 
         # Example special workspace (scratchpad)

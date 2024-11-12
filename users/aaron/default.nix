@@ -5,6 +5,8 @@
 		obsidian
 		discord
 		vscode
+		jetbrains.rust-rover
+		jetbrains.webstorm
 
 		#Web
 		tor-browser

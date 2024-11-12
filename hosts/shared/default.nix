@@ -94,6 +94,9 @@
 		
 		xdg-utils # Default, apps etc
 
+		libva
+		ffmpeg
+
 		flatpak
   	];  
 
