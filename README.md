@@ -20,7 +20,8 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `nv`: Launch Neovim.
 - `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - `download`: Download a video from a website of your choice.
-- `bye`: To power down
+- `bye`: To power down.
+- `cya`: To hibernate.
 
 
 
@@ -31,6 +32,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `SUPER` + `Q` to terminate an application.
 - `SUPER` + `E` to open your preferred browser.
 - `SUPER` + `T` to open your preffered terminal.
+- `SUPER` + `B` to toggle split.
 - `SUPER` + `SPACE` to open the app launcher.
 
 ## Installation

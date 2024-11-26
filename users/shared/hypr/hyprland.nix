@@ -151,6 +151,7 @@
         "$mainMod, E, exec, $browser"
         "$mainMod, V, togglefloating,"
         "$mainMod, F, fullscreen"
+        "$mainMod, B, layoutmsg, togglesplit"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, H, movefocus, l"

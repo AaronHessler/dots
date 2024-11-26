@@ -66,6 +66,7 @@ in
 			nv = "nvim";
 			cd = "z"; # Replace cd with zoxide
 			bye = "shutdown now";
+			cya = "systemctl hibernate";
 
 			download = "yt-dlp";
 
