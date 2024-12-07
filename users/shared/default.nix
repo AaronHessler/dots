@@ -6,9 +6,7 @@ in
 
 	home.packages = with pkgs; [
 	terminaltexteffects.packages.x86_64-linux.default
-		hello
 		albert # Replace?
-		git # Move
 
         # Hyprland
 		hyprland
@@ -27,7 +25,11 @@ in
 		firefox
 		inputs.zen-browser.packages."${system}".specific
 
+		# CLI Tools
+		hello
 		yazi
+		git # Move
+		yt-dlp
 
 		# Notifications
 		dunst
@@ -40,7 +42,6 @@ in
 		# Color Picker
 		hyprpicker
 
-		yt-dlp
 
 	];
 

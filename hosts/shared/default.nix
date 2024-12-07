@@ -48,6 +48,7 @@
 	};
 
   	networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+	networking.firewall.allowedTCPPorts = [ 8080 5173 4173 ];
 
 	time.timeZone = "Europe/Zurich";
 
@@ -83,6 +84,7 @@
 		opendrop
 
 		# Rust Development
+		trunk
 		cargo
 		rustc
 		rustup
