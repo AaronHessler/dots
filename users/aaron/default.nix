@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, user, ... }: {
+{ pkgs, stateVersion, user, config, ... }: {
 	home.packages = with pkgs; [
 		spotify
 		ferdium
@@ -27,6 +27,12 @@
 	];
 
 
+	home.file.".config/nvim" = {
+		source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dots/users/aaron/neovim";
+	};
+
+
+
 	# Figma
 	systemd.user.services.figma-agent = {
   		Unit = {
@@ -47,8 +53,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Dragonfly.png}";
-			wallpaper = ",${./assets/images/Dragonfly.png}";
+			preload = "${./assets/images/Icon.png}";
+			wallpaper = ",${./assets/images/Icon.png}";
 		};
 	};
 

@@ -5,7 +5,7 @@ variant: "dark"
 palette:
   base00: "000000" # Black
   base01: "000000"
-  base02: "000000"
+  base02: "47FFDD"
   base03: "DCDCDC"
   base04: "DCDCDC"
   base05: "DCDCDC"
@@ -13,9 +13,9 @@ palette:
   base07: "DCDCDC" # White
   base08: "FF4788" # Red
   base09: "FFAC47" # Orange
-  base0A: "EDFF47" # Yellow
+  base0A: "FFEA47" # Yellow
   base0B: "97FF47" # Green
-  base0C: "3ADBFF" # Cyan
+  base0C: "00CFFF" # Cyan
   base0D: "47FFDD" # Primary
-  base0E: "8367FF" # Purple
-  base0F: "525252" # IM sPeCiAl
+  base0E: "8D57FF" # Purple
+  base0F: "47FFDD" # IM sPeCiAl

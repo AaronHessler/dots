@@ -5,7 +5,7 @@ in
 { 
 
 	home.packages = with pkgs; [
-	terminaltexteffects.packages.x86_64-linux.default
+		terminaltexteffects.packages.x86_64-linux.default
 		albert # Replace?
 
         # Hyprland
@@ -18,6 +18,7 @@ in
 		gnome-builder # IDE
 		papers # Document Viewer
 		gnome-usage
+
 
 		font-manager
 
@@ -41,7 +42,6 @@ in
 
 		# Color Picker
 		hyprpicker
-
 
 	];
 
