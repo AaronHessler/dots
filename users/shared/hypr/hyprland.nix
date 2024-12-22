@@ -52,10 +52,10 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
+        # drop_shadow = true;
+        # shadow_range = 4;
+        # shadow_render_power = 4;
+        # "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
             enabled = true;
@@ -121,8 +121,8 @@
 
     # Input
     input = {
-        kb_layout = "ch";
-        kb_variant = "de_mac";
+        kb_layout = "de";
+        # kb_variant = "de_mac";
         
         follow_mouse = 1;
         sensitivity = 0; # 0 means no modification

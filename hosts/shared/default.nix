@@ -75,22 +75,6 @@
 		home-manager
 
 
-		# JS Development
-		deno # JS Runtime
-		pnpm
-		nodejs
-
-		darling
-		opendrop
-
-		# Rust Development
-		trunk
-		cargo
-		rustc
-		rustup
-		wasm-pack
-		gcc
-
 		# Startup sound
 		alsa-utils
 		

@@ -42,7 +42,6 @@ in
 
 		# Color Picker
 		hyprpicker
-
 	];
 
 
@@ -68,6 +67,8 @@ in
 			cd = "z"; # Replace cd with zoxide
 			bye = "shutdown now";
 			cya = "systemctl hibernate";
+
+			"'git gud'" = "echo 'Ha, nice try.'";
 
 			download = "yt-dlp";
 

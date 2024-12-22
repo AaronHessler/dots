@@ -1,29 +1,55 @@
 { pkgs, stateVersion, user, config, ... }: {
 	home.packages = with pkgs; [
-		spotify
-		ferdium
+
 		obsidian
+		hyprpaper
+		btop
+		steam
+		overskride
+		figlet
+		geogebra
+
+		# Connect
+		whatsapp-for-linux
 		discord
+		ferdium
+
+		# Web
+		tor-browser
+		chromium
+
+		# Music
+		amberol
+		spotify
+		
+		# Design
+		# figma-agent
+		inkscape
+		krita
+
+		# Coding
 		vscode
 		jetbrains.rust-rover
 		jetbrains.webstorm
 
-		#Web
-		tor-browser
+		# Game Development
+		godot_4
 
-		amberol
-		hyprpaper
-		krita
-		btop
-		steam
-		overskride
-		whatsapp-for-linux
-		chromium
-		#osu-lazer # Drawing tablet coordination
-		figma-agent
-		figlet
+		# JS Development
+		deno # JS Runtime
+		pnpm
+		nodejs
 
-		geogebra
+		# darling
+		# opendrop
+
+		# Rust Development
+		# trunk
+		# cargo
+		# rustc
+		rustup
+		# wasm-pack
+		gcc
 	];
 
 
@@ -34,27 +60,27 @@
 
 
 	# Figma
-	systemd.user.services.figma-agent = {
-  		Unit = {
-    		Description = "Figma Agent";
-  		};
-  		Service = {
-			Enable = true;
-    		ExecStart = "${pkgs.figma-agent}/bin/figma-agent";
-    		Restart = "on-failure";
-  		};
-  		Install = {
-    		WantedBy = [ "default.target" ];
-  		};
-	};
+	# systemd.user.services.figma-agent = {
+  		# Unit = {
+    		# Description = "Figma Agent";
+  		# };
+  		# Service = {
+			# Enable = true;
+    		# ExecStart = "${pkgs.figma-agent}/bin/figma-agent";
+    		# Restart = "on-failure";
+  		# };
+  		# Install = {
+    		# WantedBy = [ "default.target" ];
+  		# };
+	# };
 
 
 
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Eclpise.png}";
-			wallpaper = ",${./assets/images/Eclpise.png}";
+			preload = "${./assets/images/Eclipse.png}";
+			wallpaper = ",${./assets/images/Eclipse.png}";
 		};
 	};
 
