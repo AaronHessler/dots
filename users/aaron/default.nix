@@ -53,8 +53,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Icon.png}";
-			wallpaper = ",${./assets/images/Icon.png}";
+			preload = "${./assets/images/Eclpise.png}";
+			wallpaper = ",${./assets/images/Eclpise.png}";
 		};
 	};
 
