@@ -65,6 +65,7 @@
   {
 	nixosConfigurations = {
 		predator = mkHost { modules = [ ./hosts/predator ]; };
+		stalker = mkHost { modules = [ ./hosts/stalker ]; };
 		prey = mkHost { modules = [ ./hosts/prey ]; };
 	};
 	homeConfigurations = {
