@@ -4,7 +4,10 @@
     };
 
     # Monitors
-    monitor=",highres,auto,1";
+    monitor = [
+        ",highres,auto,1"
+        "eDP-1,highres,auto,1.5"
+    ];
 
 
     # Environment
@@ -117,6 +120,11 @@
     misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
+    };
+
+    device = {
+        name = "gxtp7386:00-27c6:0111-stylus";
+        relative_input = false;
     };
 
     # Input
