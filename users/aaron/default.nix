@@ -4,10 +4,14 @@
 		obsidian
 		hyprpaper
 		btop
-		steam
 		overskride
 		figlet
 		geogebra
+
+		# Gaming
+		steam
+		modrinth-app
+		alvr
 
 		# Connect
 		whatsapp-for-linux
@@ -23,8 +27,7 @@
 		spotify
 		
 		# Design
-		# figma-agent
-		inkscape
+		# figma-agent # F*ck you so much
 		krita
 
 		# Coding
@@ -39,6 +42,10 @@
 		deno # JS Runtime
 		pnpm
 		nodejs
+
+		# Yubikey
+		yubikey-agent
+		yubikey-manager
 
 		# darling
 		# opendrop
