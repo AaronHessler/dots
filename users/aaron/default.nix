@@ -11,7 +11,6 @@
 		# Gaming
 		steam
 		modrinth-app
-		alvr
 
 		# Connect
 		whatsapp-for-linux

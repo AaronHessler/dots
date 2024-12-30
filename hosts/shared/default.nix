@@ -52,10 +52,6 @@
 		8080
 		5173
 		4173
-		9943 # ALVR Port
-		9942 # ALVR Port
-		8082 # ALVR Port
-		9944 # ALVR Port
 	];
 
 	time.timeZone = "Europe/Zurich";
