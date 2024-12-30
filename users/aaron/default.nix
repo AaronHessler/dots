@@ -10,7 +10,6 @@
 
 		# Gaming
 		steam
-		modrinth-app
 
 		# Connect
 		whatsapp-for-linux
