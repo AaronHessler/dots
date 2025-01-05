@@ -1,16 +1,18 @@
-{ pkgs, stateVersion, user, config, ... }: {
-	home.packages = with pkgs; [
+{ pkgs, unstable-pkgs, stateVersion, user, config, ... }: {
+	home.packages = 
 
+		(with pkgs; [
 		obsidian
 		hyprpaper
 		btop
 		overskride
 		figlet
 		geogebra
+		open-webui
 
 		# Gaming
 		steam
-		modrinth-app
+		lutris
 
 		# Connect
 		whatsapp-for-linux
@@ -26,7 +28,6 @@
 		spotify
 		
 		# Design
-		# figma-agent # F*ck you so much
 		krita
 
 		# Coding
@@ -42,22 +43,27 @@
 		pnpm
 		nodejs
 
+		# Rust Development
+		trunk
+		cargo
+		rustc
+		#rustup
+		wasm-pack
+		gcc
+
 		# Yubikey
 		yubikey-agent
 		yubikey-manager
-
+		
 		# darling
 		# opendrop
+	])
 
-		# Rust Development
-		# trunk
-		# cargo
-		# rustc
-		rustup
-		# wasm-pack
-		gcc
-	];
+	++
 
+	(with unstable-pkgs; [
+		# figma-agent # F*ck you so much
+	]);
 
 	home.file.".config/nvim" = {
 		source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dots/users/aaron/neovim";
@@ -66,19 +72,19 @@
 
 
 	# Figma
-	# systemd.user.services.figma-agent = {
-  		# Unit = {
-    		# Description = "Figma Agent";
-  		# };
-  		# Service = {
-			# Enable = true;
-    		# ExecStart = "${pkgs.figma-agent}/bin/figma-agent";
-    		# Restart = "on-failure";
-  		# };
-  		# Install = {
-    		# WantedBy = [ "default.target" ];
-  		# };
-	# };
+	systemd.user.services.figma-agent = {
+  		Unit = {
+    		Description = "Figma Agent";
+  		};
+  		Service = {
+			Enable = true;
+    		ExecStart = "figma-agent"; # Use nix-env temporairly #"${unstable-pkgs.figma-agent}/bin/figma-agent";
+    		Restart = "on-failure";
+  		};
+  		Install = {
+    		WantedBy = [ "default.target" ];
+  		};
+	};
 
 
 

@@ -58,7 +58,7 @@
 			nix-flatpak.homeManagerModules.nix-flatpak
 			stylix.homeManagerModules.stylix
 		] ++ modules;
-		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system;};
+		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};
 	};
 
   in
