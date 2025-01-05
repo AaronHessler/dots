@@ -33,7 +33,6 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `SUPER` + `T` to open your preffered terminal.
 - `SUPER` + `B` to toggle split.
 - `SUPER` + `SPACE` to open the app launcher.
-
 - `SHIFT` + `SUPER` + `S` to take a screenshot.
 - `SHIFT` + `SUPER` + `C` to pick a color.
 
