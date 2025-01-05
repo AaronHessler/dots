@@ -17,10 +17,10 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 
 - `nixup`: Rebuild the system configuration.
 - `homeup`: Rebuild the home configuration.
+- `download`: Download a video from a website of your choice.
 - `hy`: Launch Hyprland.
 - `nv`: Launch Neovim.
-- `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
-- `download`: Download a video from a website of your choice.
+- `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide).
 - `bye`: To power down.
 - `cya`: To hibernate.
 
