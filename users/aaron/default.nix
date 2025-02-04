@@ -114,6 +114,12 @@
 		};
 
 		nixvim = {
+			opts = {
+				tabstop = 4;
+				shiftwidth = 4;
+				softtabstop = 4;
+				expandtab = true;
+    		};
 			enable = true;
 			plugins = {
 				lualine.enable = true;
@@ -128,6 +134,7 @@
 						};
 						jdtls.enable = true;
 						nixd.enable = true;
+						marksman.enable = true;
 					};
 				};
 				cmp = {
