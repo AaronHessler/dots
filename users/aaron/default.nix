@@ -8,7 +8,6 @@
 		overskride
 		figlet
 		geogebra
-		open-webui
 
 		# Gaming
 		steam
@@ -45,10 +44,10 @@
 
 		# Rust Development
 		trunk
-		#cargo
-		#rust-analyzer
-		#rustc
-		rustup
+		cargo
+		rust-analyzer
+		rustc
+		#rustup
 		wasm-pack
 		gcc
 
@@ -66,12 +65,6 @@
 		# figma-agent # F*ck you so much
 	]);
 
-	home.file.".config/nvim" = {
-		source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dots/users/aaron/neovim";
-	};
-
-
-
 	# Figma
 	systemd.user.services.figma-agent = {
   		Unit = {
@@ -86,8 +79,6 @@
     		WantedBy = [ "default.target" ];
   		};
 	};
-
-
 
 	services.hyprpaper = {
 		enable = true;
@@ -119,6 +110,42 @@
 				version = "1";
 				prompt = "enabled";
 				git_protocol = "https";
+			};
+		};
+
+		nixvim = {
+			enable = true;
+			plugins = {
+				lualine.enable = true;
+				luasnip.enable = true;
+				lsp = {
+					enable = true;
+					servers = {
+						rust_analyzer = {
+							enable = true;
+							installCargo = true;
+							installRustc = true;
+						};
+						jdtls.enable = true;
+						nixd.enable = true;
+					};
+				};
+				cmp = {
+					enable = true;
+					autoEnableSources = true;
+					settings.sources = [
+						{ name = "nvim_lsp"; }
+						{ name = "path"; }
+						{ name = "buffer"; }
+						{ name = "luasnip"; }
+					];
+					settings.mapping = {
+						"<Tab>" = "cmp.mapping.confirm({ select = true })";
+						"<CR>" = "cmp.mapping.confirm({ select = true })";
+						"<Up>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+						"<Down>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+					};
+				};
 			};
 		};
 	};
