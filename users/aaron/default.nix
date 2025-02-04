@@ -45,9 +45,10 @@
 
 		# Rust Development
 		trunk
-		cargo
-		rustc
-		#rustup
+		#cargo
+		#rust-analyzer
+		#rustc
+		rustup
 		wasm-pack
 		gcc
 
@@ -91,8 +92,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Eclipse.png}";
-			wallpaper = ",${./assets/images/Eclipse.png}";
+			preload = "${./assets/images/Lumon.png}";
+			wallpaper = ",${./assets/images/Lumon.png}";
 		};
 	};
 
