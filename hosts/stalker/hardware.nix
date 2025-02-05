@@ -13,6 +13,9 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  systemd.tpm2.enable = false;
+  boot.initrd.systemd.tpm2.enable = false;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3aee314e-4d70-4f44-b9b8-8510960dd799";
       fsType = "ext4";
@@ -29,7 +32,10 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [
+    { device = "/swapfile"; }
+  ];
+
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

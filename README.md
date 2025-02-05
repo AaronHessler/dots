@@ -2,6 +2,9 @@
 
 Welcome to the ApexOS dotfiles repository! This repository contains my personal configuration files, optimized for my workflow.
 
+ApexOS tries to keep everything in the terminal. So don't expect any fancy UIs.
+You can expect some fancy TUIs though.
+
 ![Banner](./assets/github/banner.png)
 
 ## Features
@@ -20,6 +23,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `nv`: Launch Neovim.
 - `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - `download`: Download a video from a website of your choice.
+- `battery` or `battery`: See your current battery percentage.
 - `bye`: To power down.
 - `cya`: To hibernate.
 

@@ -3,11 +3,17 @@
         no_hardware_cursors = true;
     };
 
+
     # Monitors
     monitor = [
         ",highres,auto,1"
         "eDP-1,highres,auto,1.5"
+        #",highres,auto,1.5,mirror,eDP-1" # Uncomment this line for screen mirroring
     ];
+
+    xwayland = {
+        force_zero_scaling = true;
+    };
 
 
     # Environment

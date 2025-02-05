@@ -32,6 +32,7 @@
 		vscode
 		jetbrains.rust-rover
 		jetbrains.webstorm
+		jetbrains.idea-community-bin
 
 		# Game Development
 		godot_4
@@ -84,8 +85,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Eclipse.png}";
-			wallpaper = ",${./assets/images/Eclipse.png}";
+			preload = "${./assets/images/Dragonfly.png}";
+			wallpaper = ",${./assets/images/Dragonfly.png}";
 		};
 	};
 

@@ -8,6 +8,8 @@ in
 		terminaltexteffects.packages.x86_64-linux.default
 		albert # Replace?
 
+		acpi
+
         # Hyprland
 		hyprland
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
@@ -71,6 +73,8 @@ in
 			"'git gud'" = "echo 'Ha, nice try.'";
 
 			download = "yt-dlp";
+			battery = "acpi -i";
+			charge = "acpi -i";
 
 			#greet = ''
 				#echo "\n"
