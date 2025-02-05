@@ -50,8 +50,8 @@
   	networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 	networking.firewall.allowedTCPPorts = [
 		8080
-		5173
-		4173
+		5173 # Vite
+		4173 # Vite
 	];
 
 	time.timeZone = "Europe/Zurich";

@@ -33,6 +33,7 @@
     ];
 
     windowrulev2 = [
+        "float,class:(com.aaron.dev)"
         "float,class:(albert) title:(albert)"
         "noborder,class:(albert) title:(albert)"
         "suppressevent maximize, class:.*"

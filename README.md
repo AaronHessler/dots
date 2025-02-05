@@ -9,7 +9,8 @@ You can expect some fancy TUIs though.
 
 ## Features
 
-- [DETAILS COMING SOON]
+- Color Picker
+- Screenshot
 
 ## Shell 
 
@@ -19,6 +20,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 
 - `nixup`: Rebuild the system configuration.
 - `homeup`: Rebuild the home configuration.
+- `download`: Download a video from a website of your choice.
 - `hy`: Launch Hyprland.
 - `nv`: Launch Neovim.
 - `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
@@ -26,8 +28,6 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `battery` or `battery`: See your current battery percentage.
 - `bye`: To power down.
 - `cya`: To hibernate.
-
-
 
 ## Keybinds
 
@@ -38,6 +38,8 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `SUPER` + `T` to open your preffered terminal.
 - `SUPER` + `B` to toggle split.
 - `SUPER` + `SPACE` to open the app launcher.
+- `SHIFT` + `SUPER` + `S` to take a screenshot.
+- `SHIFT` + `SUPER` + `C` to pick a color.
 
 ## Installation
 

@@ -13,6 +13,10 @@
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 	stylix.url = "github:danth/stylix";
 	zen-browser.url = "github:MarceColl/zen-browser-flake";
+	nixvim = {
+        url = "github:nix-community/nixvim";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{
@@ -24,7 +28,8 @@
 	terminaltexteffects,
 	nix-flatpak,
 	stylix,
-	zen-browser
+	zen-browser,
+	nixvim
 }: 
   let
   	globalUsers = import ./hosts/users/global;
@@ -57,8 +62,9 @@
 			xremap.homeManagerModules.default
 			nix-flatpak.homeManagerModules.nix-flatpak
 			stylix.homeManagerModules.stylix
+			nixvim.homeManagerModules.nixvim
 		] ++ modules;
-		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system;};
+		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};
 	};
 
   in

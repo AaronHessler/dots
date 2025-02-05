@@ -44,6 +44,7 @@ in
 
 		# Color Picker
 		hyprpicker
+
 	];
 
 
