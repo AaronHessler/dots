@@ -11,8 +11,8 @@
 	xremap.url = "github:xremap/nix-flake";
 	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-	stylix.url = "github:danth/stylix";
-	zen-browser.url = "github:MarceColl/zen-browser-flake";
+	stylix.url = "github:danth/stylix/release-24.11";
+	zen-browser.url = "github:0xc000022070/zen-browser-flake";
 	nixvim = {
         url = "github:nix-community/nixvim";
         inputs.nixpkgs.follows = "nixpkgs";
