@@ -9,6 +9,18 @@
 		figlet
 		geogebra
 
+		# Mail
+		protonmail-desktop
+
+
+		# Video
+        davinci-resolve
+        obs-studio
+		wireplumber
+
+		# Photography
+		darktable
+
 		# Gaming
 		steam
 		lutris
@@ -25,7 +37,7 @@
 		# Music
 		amberol
 		spotify
-		
+
 		# Design
 		krita
 
@@ -45,11 +57,11 @@
 
 		# Rust Development
 		trunk
-		cargo
-		rust-analyzer
-		rustc
-		#rustup
-		wasm-pack
+		# cargo
+		# rust-analyzer
+		# rustc
+		rustup
+		# wasm-pack
 		gcc
 
 		# Yubikey
@@ -66,6 +78,15 @@
 		# figma-agent # F*ck you so much
 	]);
 
+	xdg.enable = true;
+	xdg.portal = { # For things like OBS
+		enable = true;
+		config = {
+		common.default = "hyprland";
+		};
+		extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+	};
+
 	# Figma
 	systemd.user.services.figma-agent = {
   		Unit = {
@@ -80,6 +101,7 @@
     		WantedBy = [ "default.target" ];
   		};
 	};
+
 
 	services.hyprpaper = {
 		enable = true;

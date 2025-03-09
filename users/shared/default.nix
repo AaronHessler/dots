@@ -20,13 +20,14 @@ in
 		gnome-builder # IDE
 		papers # Document Viewer
 		gnome-usage
+		apostrophe
 
 
 		font-manager
 
 		# Web
 		firefox
-		inputs.zen-browser.packages."${system}".specific
+		inputs.zen-browser.packages."${system}".default
 
 		# CLI Tools
 		hello

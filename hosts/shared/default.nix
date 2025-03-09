@@ -40,6 +40,7 @@
   	services.pipewire = {
      	enable = true;
      	pulse.enable = true;
+		alsa.enable = true;
   	};
   
 	boot.plymouth = {
@@ -85,7 +86,7 @@
 		xdg-utils # Default, apps etc
 
 		libva
-		ffmpeg
+		ffmpeg-full
 
 		flatpak
   	];  

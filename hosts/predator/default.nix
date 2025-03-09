@@ -14,6 +14,9 @@
     ollama
   ];  
 
+    virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "aaron" ];
+
 
 		#pulseaudio.support32Bit = true; # Enable sound
 

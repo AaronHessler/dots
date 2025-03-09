@@ -38,6 +38,9 @@
         "noborder,class:(albert) title:(albert)"
         "suppressevent maximize, class:.*"
         "rounding 0,fullscreen:1"
+
+        "float,title:(Picture-in-Picture)"
+        "size 800 450,title:(Picture-in-Picture)"
     ];
 
     # Look and Feel
