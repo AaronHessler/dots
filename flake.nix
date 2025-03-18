@@ -13,6 +13,10 @@
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 	stylix.url = "github:danth/stylix/release-24.11";
 	zen-browser.url = "github:0xc000022070/zen-browser-flake";
+	rust-overlay = {
+    	url = "github:oxalica/rust-overlay";
+    	inputs.nixpkgs.follows = "nixpkgs";
+    };
 	nixvim = {
         url = "github:nix-community/nixvim";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +33,8 @@
 	nix-flatpak,
 	stylix,
 	zen-browser,
-	nixvim
+	nixvim,
+	rust-overlay
 }: 
   let
   	globalUsers = import ./hosts/users/global;
@@ -56,6 +61,7 @@
 		pkgs = import nixpkgs {
 			inherit system;
 			config.allowUnfree = true;
+			overlays = [ rust-overlay.overlays.default ];
 		};
 		modules = [
 			sharedHome

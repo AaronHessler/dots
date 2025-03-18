@@ -3,6 +3,16 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	fonts.fontconfig = {
+		enable = true;
+		hinting = {
+			enable = false;
+			style = "slight";
+		};
+		antialias = true;
+		subpixel.lcdfilter = "light";
+	};
+
 	# Make executables work
 	programs.nix-ld.enable = true;
 

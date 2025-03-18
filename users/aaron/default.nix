@@ -9,6 +9,9 @@
 		figlet
 		geogebra
 
+		# AI
+		fabric-ai
+
 		# Mail
 		protonmail-desktop
 
@@ -56,11 +59,10 @@
 
 		# Rust Development
 		trunk
-		# cargo
-		# rust-analyzer
-		# rustc
+		wasm-pack
+		#rust-bin.stable.latest.default
+		#rust-analyzer
 		rustup
-		# wasm-pack
 		gcc
 
 		# Yubikey
@@ -75,6 +77,7 @@
 
 	(with unstable-pkgs; [
 		# figma-agent # F*ck you so much
+		modrinth-app-unwrapped
 	]);
 
 	xdg.enable = true;
