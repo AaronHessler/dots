@@ -2,4 +2,4 @@
 let
 	mkUser = import ../make;
 in
-	mkUser { name = "aaron"; sudo = true; }	
+	mkUser { name = "aaron"; sudo = true; }
