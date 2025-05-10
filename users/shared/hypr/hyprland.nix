@@ -39,6 +39,9 @@
         "suppressevent maximize, class:.*"
         "rounding 0,fullscreen:1"
 
+        "float,class:(org.gnome.NautilusPreviewer)"
+        "float,class:(greeter)"
+
         "float,title:(Picture-in-Picture)"
         "size 800 450,title:(Picture-in-Picture)"
     ];
@@ -99,8 +102,8 @@
         ];
 
         animation = [
-            "windows, 1, 3, md3_decel, popin 60%"
-            "windowsIn, 1, 3, md3_decel, popin 60%"
+            "windows, 1, 3, md3_decel, popin 80%"
+            "windowsIn, 1, 3, md3_decel, popin 80%"
             "windowsOut, 1, 3, md3_accel, popin 60%"
             "border, 1, 10, default"
             "fade, 1, 3, md3_decel"
@@ -109,7 +112,7 @@
             "layersOut, 1, 1.6, menu_accel"
             "fadeLayersIn, 1, 2, menu_decel"
             "fadeLayersOut, 1, 4.5, menu_accel"
-            # "workspaces, 1, 5, menu_decel, slide"
+            "workspaces, 1, 5, menu_decel, slide"
             "workspaces, 1, 2.5, softAcDecel, slide"
             "workspaces, 1, 7, menu_decel, slidefade 15%"
             # "specialWorkspace, 1, 3, md3_decel, slidefadevert 15%"

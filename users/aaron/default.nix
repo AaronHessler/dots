@@ -1,4 +1,4 @@
-{ pkgs, unstable-pkgs, stateVersion, user, config, ... }: {
+{ pkgs, unstable-pkgs, stateVersion, user, config, inputs, ... }: {
 	home.packages = 
 
 		(with pkgs; [
@@ -8,6 +8,8 @@
 		overskride
 		figlet
 		geogebra
+
+		inputs.apex-greeter.packages.${system}.default
 
 		# AI
 		fabric-ai
@@ -49,6 +51,7 @@
 		jetbrains.rust-rover
 		jetbrains.webstorm
 		jetbrains.idea-community-bin
+		leetcode-cli # 🗿
 
 		# Game Development
 		godot_4
@@ -72,14 +75,16 @@
 		
 		# darling
 		# opendrop
+
 	])
 
 	++
 
 	(with unstable-pkgs; [
-		# figma-agent # F*ck you so much
-		modrinth-app-unwrapped
+		#figma-agent # F*ck you so much
+		modrinth-app
 	]);
+
 
 	xdg.enable = true;
 	xdg.portal = { # For things like OBS
@@ -88,6 +93,17 @@
 		common.default = "hyprland";
 		};
 		extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+	};
+
+	xdg.desktopEntries."Modrinth App" = {
+		name = "Modrinth App";
+		exec = "env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 ModrinthApp";
+		categories = [ "Game" "ActionGame" "AdventureGame" "Simulation" ];
+		icon = "ModrinthApp";
+		terminal = false;
+		type = "Application";
+		comment = "Modrinth's game launcher";
+		startupNotify = true;
 	};
 
 	# Figma
@@ -109,8 +125,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Dragonfly.png}";
-			wallpaper = ",${./assets/images/Dragonfly.png}";
+			preload = "${./assets/images/Ares.png}";
+			wallpaper = ",${./assets/images/Ares.png}";
 		};
 	};
 

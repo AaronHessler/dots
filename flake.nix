@@ -21,6 +21,13 @@
         url = "github:nix-community/nixvim";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+
+	# Custom Bundled Applications
+	apex-greeter = {
+		url = "path:custom_pkgs/greeter";
+        inputs.nixpkgs.follows = "nixpkgs";
+	};
+	
   };
 
   outputs = inputs@{
@@ -34,7 +41,8 @@
 	stylix,
 	zen-browser,
 	nixvim,
-	rust-overlay
+	rust-overlay,
+	apex-greeter
 }: 
   let
   	globalUsers = import ./hosts/users/global;

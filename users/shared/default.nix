@@ -17,6 +17,7 @@ in
 		# GNOME App Suite
 		gnome.eog # Image Viewer (Gnome)
 		gnome.nautilus # Files
+		sushi # File previewer for nautilus
 		gnome-builder # IDE
 		papers # Document Viewer
 		gnome-usage
@@ -30,10 +31,11 @@ in
 		inputs.zen-browser.packages."${system}".default
 
 		# CLI Tools
-		hello
 		yazi
 		git # Move
 		yt-dlp
+		tree
+		openssl
 
 		# Notifications
 		dunst
@@ -71,6 +73,8 @@ in
 			cd = "z"; # Replace cd with zoxide
 			bye = "shutdown now";
 			cya = "systemctl hibernate";
+
+			hello = "print \"Hello, Universe!\"";
 
 			"'git gud'" = "echo 'Ha, nice try.'";
 
