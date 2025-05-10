@@ -1,6 +1,67 @@
 { pkgs, unstable-pkgs, stateVersion, user, config, inputs, ... }: {
 	home.packages = 
+		[
+			(
+			
+			let
+				nodeDependencies = (pkgs.callPackage ../../custom_pkgs/greeter {}).nodeDependencies;
+			in
+			pkgs.stdenv.mkDerivation {
+			pname = "apex-greeter";
+			version = "0.1.0";
 
+			src = ../../custom_pkgs/greeter;
+
+			nativeBuildInputs = with pkgs; [
+				pkg-config
+				gcc
+
+				webkitgtk
+				gtk3
+				cairo
+				gdk-pixbuf
+				glib
+				dbus
+				openssl_3
+				librsvg
+    
+				nodejs
+			];
+
+			buildInputs = with pkgs; [
+				curl
+				wget
+				pkg-config
+				dbus
+				openssl_3
+				glib
+				gtk3
+				libsoup
+				webkitgtk
+				librsvg
+			];
+
+
+			buildPhase = ''
+				ln -s ${nodeDependencies}/lib/node_modules ./node_modules
+				npm run build
+				cargo tauri build --release
+			'';
+
+			installPhase = ''
+				mkdir -p $out/bin
+				cp src-tauri/target/release/greeter $out/bin/
+			'';
+
+			meta = {
+				description = "ApexOS Greeter";
+				maintainers = with pkgs.lib.maintainers; [ ];
+				license = pkgs.lib.licenses.mit;
+			};
+			})
+
+		]
+		++
 		(with pkgs; [
 		obsidian
 		hyprpaper
@@ -8,8 +69,6 @@
 		overskride
 		figlet
 		geogebra
-
-		inputs.apex-greeter.packages.${system}.default
 
 		# AI
 		fabric-ai

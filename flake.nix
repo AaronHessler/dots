@@ -22,12 +22,6 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
 
-	# Custom Bundled Applications
-	apex-greeter = {
-		url = "path:custom_pkgs/greeter";
-        inputs.nixpkgs.follows = "nixpkgs";
-	};
-	
   };
 
   outputs = inputs@{
@@ -42,7 +36,6 @@
 	zen-browser,
 	nixvim,
 	rust-overlay,
-	apex-greeter
 }: 
   let
   	globalUsers = import ./hosts/users/global;
