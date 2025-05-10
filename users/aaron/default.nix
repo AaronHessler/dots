@@ -14,38 +14,44 @@
 
 			nativeBuildInputs = with pkgs; [
 				pkg-config
-				gcc
 
-				webkitgtk
-				gtk3
-				cairo
-				gdk-pixbuf
+				openssl
+				libsoup_3
+				libff
+				zlib
 				glib
-				dbus
-				openssl_3
-				librsvg
+				gtk4
+				gtk3
+				webkitgtk_4_1
+				xdg-utils
+
+				cargo
+				cargo-tauri
+				gcc
     
 				nodejs
+				pnpm
 			];
 
 			buildInputs = with pkgs; [
-				curl
-				wget
 				pkg-config
-				dbus
-				openssl_3
+				openssl
+				libsoup_3
+				libff
+				zlib
 				glib
+				gtk4
 				gtk3
-				libsoup
-				webkitgtk
-				librsvg
+				webkitgtk_4_1
+				xdg-utils
 			];
 
 
 			buildPhase = ''
+				export HOME=$TMPDIR
 				ln -s ${nodeDependencies}/lib/node_modules ./node_modules
 				npm run build
-				cargo tauri build --release
+				cargo tauri build --no-bundle
 			'';
 
 			installPhase = ''

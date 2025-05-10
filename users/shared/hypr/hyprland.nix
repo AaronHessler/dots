@@ -28,6 +28,8 @@
         #"[workspace 1 silent] kitty"
         #"[workspace 1 silent] $browser"
 
+        "[workspace 1 silent] GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 greeter"
+
         # Start Albert
         "albert"
     ];
@@ -40,7 +42,7 @@
         "rounding 0,fullscreen:1"
 
         "float,class:(org.gnome.NautilusPreviewer)"
-        "float,class:(greeter)"
+        "float,class:(Greeter)"
 
         "float,title:(Picture-in-Picture)"
         "size 800 450,title:(Picture-in-Picture)"
