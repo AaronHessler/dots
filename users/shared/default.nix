@@ -15,8 +15,8 @@ in
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
 
 		# GNOME App Suite
-		gnome.eog # Image Viewer (Gnome)
-		gnome.nautilus # Files
+		eog # Image Viewer (Gnome)
+		nautilus # Files (Gnome)
 		sushi # File previewer for nautilus
 		gnome-builder # IDE
 		papers # Document Viewer
@@ -121,6 +121,9 @@ in
 
 	programs.starship = {
 		enable = true;
+		settings = {
+    		python.disabled = true;
+  		};
 	};
 
   	wayland.windowManager.hyprland = {
@@ -133,6 +136,7 @@ in
 		inherit stateVersion;
 		username = user;
 		homeDirectory = "/home/${user}";
+
 
 		# Cursor Theme
 		#pointerCursor = { 
@@ -150,7 +154,7 @@ in
 	gtk = {
 		enable = true;
 		iconTheme = {
-			package = pkgs.gnome.adwaita-icon-theme;
+			package = pkgs.adwaita-icon-theme;
 			name = "Adwaita";
 		};
 	};
@@ -163,6 +167,7 @@ in
 		cursor = {
 			package = pkgs.posy-cursors;
 			name = "Posy_Cursor";
+			size = 32;
 		};
 		autoEnable = true;
 		fonts = {
@@ -171,7 +176,7 @@ in
 				name = "Syne";
 			};
 			monospace = {
-				package = pkgs.nerdfonts;
+				package = pkgs.nerd-fonts.jetbrains-mono;
 				name = "JetBrainsMono Nerd Font";
 			};
 		};

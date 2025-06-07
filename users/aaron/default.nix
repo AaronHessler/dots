@@ -1,74 +1,5 @@
 { pkgs, unstable-pkgs, stateVersion, user, config, inputs, ... }: {
-	home.packages = 
-		[
-			(
-			
-			let
-				nodeDependencies = (pkgs.callPackage ../../custom_pkgs/greeter {}).nodeDependencies;
-			in
-			pkgs.stdenv.mkDerivation {
-			pname = "apex-greeter";
-			version = "0.1.0";
-
-			src = ../../custom_pkgs/greeter;
-
-			nativeBuildInputs = with pkgs; [
-				pkg-config
-
-				openssl
-				libsoup_3
-				libff
-				zlib
-				glib
-				gtk4
-				gtk3
-				webkitgtk_4_1
-				xdg-utils
-
-				cargo
-				cargo-tauri
-				gcc
-    
-				nodejs
-				pnpm
-			];
-
-			buildInputs = with pkgs; [
-				pkg-config
-				openssl
-				libsoup_3
-				libff
-				zlib
-				glib
-				gtk4
-				gtk3
-				webkitgtk_4_1
-				xdg-utils
-			];
-
-
-			buildPhase = ''
-				export HOME=$TMPDIR
-				ln -s ${nodeDependencies}/lib/node_modules ./node_modules
-				npm run build
-				cargo tauri build --no-bundle
-			'';
-
-			installPhase = ''
-				mkdir -p $out/bin
-				cp src-tauri/target/release/greeter $out/bin/
-			'';
-
-			meta = {
-				description = "ApexOS Greeter";
-				maintainers = with pkgs.lib.maintainers; [ ];
-				license = pkgs.lib.licenses.mit;
-			};
-			})
-
-		]
-		++
-		(with pkgs; [
+	home.packages = (with pkgs; [
 		obsidian
 		hyprpaper
 		btop
@@ -84,7 +15,6 @@
 
 
 		# Video
-        davinci-resolve
         obs-studio
 		wireplumber
 
@@ -93,7 +23,9 @@
 
 		# Gaming
 		steam
+		gamescope
 		lutris
+		modrinth-app
 
 		# Connect
 		whatsapp-for-linux
@@ -103,10 +35,6 @@
 		# Web
 		tor-browser
 		chromium
-
-		# Music
-		amberol
-		spotify
 
 		# Design
 		krita
@@ -119,12 +47,16 @@
 		leetcode-cli # 🗿
 
 		# Game Development
-		godot_4
 
 		# JS Development
 		deno # JS Runtime
 		pnpm
-		nodejs
+
+		# Python, Analysis
+		(python3.withPackages (ps: with ps; [
+			jupyterlab
+			matplotlib
+    	]))
 
 		# Rust Development
 		trunk
@@ -147,7 +79,9 @@
 
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
-		modrinth-app
+		inkscape
+
+		spotify
 	]);
 
 
@@ -190,8 +124,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Ares.png}";
-			wallpaper = ",${./assets/images/Ares.png}";
+			preload = "${./assets/images/Singularity.png}";
+			wallpaper = ",${./assets/images/Singularity.png}";
 		};
 	};
 

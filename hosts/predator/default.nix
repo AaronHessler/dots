@@ -1,4 +1,4 @@
-{ config, lib, pkgs, stateVersion, ... }:
+{ config, lib, pkgs, stateVersion, unstable-pkgs, ... }:
 
 {
   imports =
@@ -11,10 +11,15 @@
 
   environment.systemPackages = with pkgs; [
     pkgs.python312Packages.liquidctl
-    ollama
+    cudatoolkit
   ];  
 
-    virtualisation.virtualbox.host.enable = true;
+  services.ollama = {
+    package = unstable-pkgs.ollama;
+    enable = true;
+    acceleration = "cuda";
+  };
+
    users.extraGroups.vboxusers.members = [ "aaron" ];
 
 

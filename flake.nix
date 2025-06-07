@@ -2,16 +2,16 @@
   description = "ApexOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 	nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-    	url = "github:nix-community/home-manager/release-24.11";
+    	url = "github:nix-community/home-manager/release-25.05";
 		inputs.nixpkgs.follows = "nixpkgs";
     };
 	xremap.url = "github:xremap/nix-flake";
 	terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
 	nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-	stylix.url = "github:danth/stylix/release-24.11";
+	stylix.url = "github:danth/stylix/release-25.05";
 	zen-browser.url = "github:0xc000022070/zen-browser-flake";
 	rust-overlay = {
     	url = "github:oxalica/rust-overlay";
@@ -42,7 +42,7 @@
   	sharedHost = import ./hosts/shared;
   	sharedHome = import ./users/shared;
 	system = "x86_64-linux";
-	stateVersion = "24.05";
+	stateVersion = "25.05";
 
 	unstable-pkgs = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };	
 
@@ -68,7 +68,7 @@
 			sharedHome
 			xremap.homeManagerModules.default
 			nix-flatpak.homeManagerModules.nix-flatpak
-			stylix.homeManagerModules.stylix
+			stylix.homeModules.stylix
 			nixvim.homeManagerModules.nixvim
 		] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};

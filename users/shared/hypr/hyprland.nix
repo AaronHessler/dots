@@ -6,8 +6,8 @@
 
     # Monitors
     monitor = [
-        ",highres,auto,1"
-        "eDP-1,highres,auto,1.5"
+        "HDMI-A-1,5120x1440@240,auto,1"
+        #"eDP-1,highres,auto,1.5"
         #",highres,auto,1.5,mirror,eDP-1" # Uncomment this line for screen mirroring
     ];
 
@@ -27,8 +27,6 @@
         "[workspace 1 silent] obsidian"
         #"[workspace 1 silent] kitty"
         #"[workspace 1 silent] $browser"
-
-        "[workspace 1 silent] GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 greeter"
 
         # Start Albert
         "albert"

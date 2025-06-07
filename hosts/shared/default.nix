@@ -80,7 +80,7 @@
 	};
 
 	fonts.fonts = with pkgs; [
-		nerdfonts
+		nerd-fonts.jetbrains-mono
 		google-fonts
 	];
 
@@ -127,7 +127,7 @@
 	};
 
 	environment.sessionVariables = {
-		FLAKE = "/home/aaron/dots"; # Change this to your location
+		NH_FLAKE = "/home/aaron/dots"; # Change this to your location
 	};
 
   	hardware = {
