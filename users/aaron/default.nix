@@ -129,8 +129,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Singularity.png}";
-			wallpaper = ",${./assets/images/Singularity.png}";
+			preload = "${./assets/images/Dragonfly.png}";
+			wallpaper = ",${./assets/images/Dragonfly.png}";
 		};
 	};
 

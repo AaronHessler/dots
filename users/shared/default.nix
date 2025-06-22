@@ -80,6 +80,7 @@ in
 			cd = "z"; # Replace cd with zoxide
 			bye = "shutdown now";
 			cya = "systemctl hibernate";
+			neofetch = "fastfetch";
 
 			hello = "print \"Hello, Universe!\"";
 
@@ -133,9 +134,9 @@ in
   		};
 	};
 
-	home.file.".config/fastfetch".source = {
+	home.file.".config/fastfetch" = {
 		source = "${./fastfetch}";
-		recursice = true;
+		recursive = true;
 	};
 
 	programs.anyrun = {
