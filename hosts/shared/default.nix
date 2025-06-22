@@ -27,6 +27,11 @@
 	# For xremap
 	hardware.uinput.enable = true;
 
+	programs.hyprland.enable = true;
+	services.displayManager.ly = {
+		enable = true;
+	};
+
 	boot = {
 		kernelParams = [
 			"uinput"
@@ -41,7 +46,7 @@
 		consoleLogLevel = 0;
 		initrd.verbose = false;
 		loader = {
-			#timeout = 0; # Only enable if system is completly stable.
+			#timeout = 0; # Only enable if system is completly stable. (Ha, it's not.)
 			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
 		};
@@ -51,8 +56,9 @@
      	enable = true;
      	pulse.enable = true;
 		alsa.enable = true;
+		wireplumber.enable = true;
   	};
-  
+
 	boot.plymouth = {
 		enable = true;
 		theme = "breeze";
@@ -86,7 +92,6 @@
 
   	environment.systemPackages = with pkgs; [
     	neovim
-    	neofetch
 		home-manager
 
 
@@ -99,6 +104,7 @@
 		ffmpeg-full
 
 		flatpak
+		ncurses
   	];  
 
 

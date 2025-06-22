@@ -16,7 +16,6 @@
 
 		# Video
         obs-studio
-		wireplumber
 
 		# Photography
 		darktable
@@ -28,8 +27,8 @@
 		modrinth-app
 
 		# Connect
-		whatsapp-for-linux
-		discord
+		zapzap # WhatsApp
+		vesktop
 		ferdium
 
 		# Web
@@ -51,6 +50,7 @@
 		# JS Development
 		deno # JS Runtime
 		pnpm
+		nodejs
 
 		# Python, Analysis
 		(python3.withPackages (ps: with ps; [
@@ -65,6 +65,7 @@
 		#rust-analyzer
 		rustup
 		gcc
+		evcxr # For those analytics
 
 		# Yubikey
 		yubikey-agent
@@ -72,7 +73,6 @@
 		
 		# darling
 		# opendrop
-
 	])
 
 	++
@@ -84,15 +84,20 @@
 		spotify
 	]);
 
-
 	xdg.enable = true;
 	xdg.portal = { # For things like OBS
 		enable = true;
 		config = {
-		common.default = "hyprland";
+			common.default = "hyprland";
 		};
 		extraPortals = [pkgs.xdg-desktop-portal-hyprland];
 	};
+
+	home.file.".config/hypr/xdph.config".source = ../shared/hypr/xdph.conf;
+
+	home.file = {
+    	"Documents/test.txt".source = config.lib.file.mkOutOfStoreSymlink "/home/aaron/dots/test.txt";
+  	};	
 
 	xdg.desktopEntries."Modrinth App" = {
 		name = "Modrinth App";
@@ -111,7 +116,7 @@
     		Description = "Figma Agent";
   		};
   		Service = {
-			Enable = true;
+			Enable = false;
     		ExecStart = "figma-agent"; # Use nix-env temporairly #"${unstable-pkgs.figma-agent}/bin/figma-agent";
     		Restart = "on-failure";
   		};

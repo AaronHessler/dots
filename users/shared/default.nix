@@ -1,18 +1,21 @@
-{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, ... }:
+{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, quickshell, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
 in
 { 
 
 	home.packages = with pkgs; [
-		terminaltexteffects.packages.x86_64-linux.default
+		terminaltexteffects.packages.${system}.default
 		albert # Replace?
+		fastfetch
 
 		acpi
 
         # Hyprland
 		hyprland
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
+
+		quickshell.packages.${system}.default
 
 		# GNOME App Suite
 		eog # Image Viewer (Gnome)
@@ -37,9 +40,6 @@ in
 		tree
 		openssl
 
-		# Notifications
-		dunst
-
         # Screenshots
 		slurp
 		grim
@@ -48,6 +48,13 @@ in
 		# Color Picker
 		hyprpicker
 
+		# Emoji Picker
+		emote
+
+		# Media Control
+		playerctl
+		pamixer
+		swayosd
 	];
 
 
@@ -125,6 +132,40 @@ in
     		python.disabled = true;
   		};
 	};
+
+	home.file.".config/fastfetch".source = {
+		source = "${./fastfetch}";
+		recursice = true;
+	};
+
+	programs.anyrun = {
+		enable = true;
+		config = {
+			x = { fraction = 0.5; };
+      		y = { absolute = 50; };
+      		width = {  absolute = 800; };
+			hideIcons = false;
+			ignoreExclusiveZones = false;
+			layer = "overlay";
+			hidePluginInfo = false;
+			closeOnClick = false;
+			showResultsImmediately = false;
+			maxEntries = null;
+
+			plugins = [
+				inputs.anyrun.packages.${pkgs.system}.applications
+				inputs.anyrun.packages.${pkgs.system}.symbols
+				inputs.anyrun.packages.${pkgs.system}.rink
+			];
+
+		};
+		extraCss = ''
+			window {
+				background-color: rgba(0, 0, 0, 0);
+			}
+		'';
+	};
+
 
   	wayland.windowManager.hyprland = {
   		enable = true;

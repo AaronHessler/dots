@@ -36,10 +36,15 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `SUPER` + `Q` to terminate an application.
 - `SUPER` + `E` to open your preferred browser.
 - `SUPER` + `T` to open your preffered terminal.
+- `SUPER` + `Z` to toggle pin.
 - `SUPER` + `B` to toggle split.
 - `SUPER` + `SPACE` to open the app launcher.
+- `SUPER` + `Arrow Right` to play next media.
+- `SUPER` + `Arrow Left` to play previous media.
+- `SUPER` + `Arrow Down` to pause media.
 - `SHIFT` + `SUPER` + `S` to take a screenshot.
 - `SHIFT` + `SUPER` + `C` to pick a color.
+- `SUPER` + `[PERIOD]` to pick an emoji.
 
 ## Installation
 

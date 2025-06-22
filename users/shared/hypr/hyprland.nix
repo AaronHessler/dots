@@ -19,7 +19,7 @@
     # Environment
     "$terminal" = "kitty";
     "$browser" = "zen";
-    "$launcher" = "albert show";
+    "$launcher" = "anyrun";
 
     exec-once = [
         # Startup apps
@@ -30,6 +30,11 @@
 
         # Start Albert
         "albert"
+
+        # SwayOSD for volume notifications
+        "swayosd-server"
+
+        "systemctl start --user hyprpaper"
     ];
 
     windowrulev2 = [
@@ -38,12 +43,20 @@
         "noborder,class:(albert) title:(albert)"
         "suppressevent maximize, class:.*"
         "rounding 0,fullscreen:1"
+        
+
+        "bordercolor rgb(FF4788) rgba(59595940), pinned:1"
+        "bordersize 3, pinned:1"
 
         "float,class:(org.gnome.NautilusPreviewer)"
         "float,class:(Greeter)"
 
         "float,title:(Picture-in-Picture)"
         "size 800 450,title:(Picture-in-Picture)"
+    ];
+
+    layerrule = [
+        "animation slide, anyrun"
     ];
 
     # Look and Feel
@@ -108,10 +121,10 @@
             "border, 1, 10, default"
             "fade, 1, 3, md3_decel"
             # "layers, 1, 2, md3_decel, slide"
-            "layersIn, 1, 10, menu_decel, popin"
+            "layersIn, 1, 3, menu_decel, popin"
             "layersOut, 1, 1.6, menu_accel"
-            "fadeLayersIn, 1, 2, menu_decel"
-            "fadeLayersOut, 1, 4.5, menu_accel"
+            "fadeLayersIn, 1, 1, menu_decel"
+            "fadeLayersOut, 1, 3, menu_accel"
             "workspaces, 1, 5, menu_decel, slide"
             "workspaces, 1, 2.5, softAcDecel, slide"
             "workspaces, 1, 7, menu_decel, slidefade 15%"
@@ -171,6 +184,7 @@
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $browser"
         "$mainMod, V, togglefloating,"
+        "$mainMod, Z, pin,"
         "$mainMod, F, fullscreen"
         "$mainMod, B, layoutmsg, togglesplit"
 
@@ -217,6 +231,17 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        "$mainMod, period, exec, emote"
+
+        # Media
+        "$mainMod, right, exec, playerctl next"
+        "$mainMod, left, exec, playerctl previous"
+        "$mainMod, down, exec, playerctl play-pause"
+
+        ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume raise"
+        ",XF86AudioLowerVolume,exec,swayosd-client --output-volume lower"
+        ",XF86AudioMute,exec,swayosd-client --output-volume mute-toggle"
     ];
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more

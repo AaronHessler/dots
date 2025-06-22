@@ -1,0 +1,11 @@
+{
+    "logo": {
+        "source": "./Dragonfly.png",      // Built-in logo name or file path
+        "width": 65,           // Width in characters (for image logos)
+        "padding": {
+            "top": 4,          // Top padding
+            "left": 0,         // Left padding
+            "right": 2         // Right padding
+        }
+    }
+}
