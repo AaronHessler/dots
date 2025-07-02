@@ -11,6 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     pkgs.python312Packages.liquidctl
+    lm_sensors
     cudatoolkit
   ];  
 
@@ -21,6 +22,9 @@
   };
 
    users.extraGroups.vboxusers.members = [ "aaron" ];
+
+   programs.coolercontrol.enable = true;
+   programs.coolercontrol.nvidiaSupport = true;
 
 
 		#pulseaudio.support32Bit = true; # Enable sound

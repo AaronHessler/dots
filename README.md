@@ -24,8 +24,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `hy`: Launch Hyprland.
 - `nv`: Launch Neovim.
 - `cd`: Use [Zoxide](https://github.com/ajeetdsouza/zoxide)
-- `download`: Download a video from a website of your choice.
-- `battery` or `battery`: See your current battery percentage.
+- `battery` or `charge`: See your current battery percentage.
 - `bye`: To power down.
 - `cya`: To hibernate.
 
@@ -41,9 +40,8 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 - `SUPER` + `SPACE` to open the app launcher.
 - `SUPER` + `Arrow Right` to play next media.
 - `SUPER` + `Arrow Left` to play previous media.
-- `SUPER` + `Arrow Down` to pause media.
+- `SUPER` + `Arrow Down` to pause media
 - `SHIFT` + `SUPER` + `S` to take a screenshot.
-- `SHIFT` + `SUPER` + `C` to pick a color.
 - `SUPER` + `[PERIOD]` to pick an emoji.
 
 ## Installation

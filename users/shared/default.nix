@@ -1,6 +1,7 @@
 { pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, quickshell, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
+	dots = "/home/aaron/dots";
 in
 { 
 
@@ -55,6 +56,17 @@ in
 		playerctl
 		pamixer
 		swayosd
+
+		# Neovim
+		typescript-language-server
+		typescript
+		nixd
+		lua-language-server
+        vscode-langservers-extracted
+
+        ripgrep # telescope
+
+        nodePackages.prettier
 	];
 
 
@@ -138,6 +150,13 @@ in
 		source = "${./fastfetch}";
 		recursive = true;
 	};
+
+	
+	home.file = {
+    	".config/nvim"= {
+			source = config.lib.file.mkOutOfStoreSymlink "${dots}/users/shared/neovim";
+		};
+  	};	
 
 	programs.anyrun = {
 		enable = true;
@@ -225,6 +244,7 @@ in
 		targets = {
 			hyprland.enable = false;
 			hyprpaper.enable = false;
+			neovim.enable = true;
 		};
 	};
 }

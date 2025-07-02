@@ -189,6 +189,16 @@
         "$mainMod, B, layoutmsg, togglesplit"
 
         # Move focus with mainMod + arrow keys
+        "$mainMod SHIFT, H, resizeactive, -30 0"
+        "$mainMod SHIFT, L, resizeactive, 30 0"
+        "$mainMod SHIFT, K, resizeactive, 0 -30"
+        "$mainMod SHIFT, J, resizeactive, 0 30"
+
+        "$mainMod ALT, H, movewindow, l"
+        "$mainMod ALT, L, movewindow, r"
+        "$mainMod ALT, K, movewindow, u"
+        "$mainMod ALT, J, movewindow, d"
+
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"

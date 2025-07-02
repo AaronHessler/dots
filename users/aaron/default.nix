@@ -94,6 +94,7 @@
 	};
 
 	home.file.".config/hypr/xdph.config".source = ../shared/hypr/xdph.conf;
+	home.file.".prettierrc".source = ./prettier/prettierrc.json;
 
 	home.file = {
     	"Documents/test.txt".source = config.lib.file.mkOutOfStoreSymlink "/home/aaron/dots/test.txt";
@@ -129,8 +130,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Dragonfly.png}";
-			wallpaper = ",${./assets/images/Dragonfly.png}";
+			preload = "${./assets/images/Atomic.png}";
+			wallpaper = ",${./assets/images/Atomic.png}";
 		};
 	};
 
@@ -160,46 +161,46 @@
 		};
 
 		nixvim = {
-			opts = {
-				tabstop = 4;
-				shiftwidth = 4;
-				softtabstop = 4;
-				expandtab = true;
-    		};
-			enable = true;
-			plugins = {
-				lualine.enable = true;
-				luasnip.enable = true;
-				lsp = {
-					enable = true;
-					servers = {
-						rust_analyzer = {
-							enable = true;
-							installCargo = true;
-							installRustc = true;
-						};
-						jdtls.enable = true;
-						nixd.enable = true;
-						marksman.enable = true;
-					};
-				};
-				cmp = {
-					enable = true;
-					autoEnableSources = true;
-					settings.sources = [
-						{ name = "nvim_lsp"; }
-						{ name = "path"; }
-						{ name = "buffer"; }
-						{ name = "luasnip"; }
-					];
-					settings.mapping = {
-						"<Tab>" = "cmp.mapping.confirm({ select = true })";
-						"<CR>" = "cmp.mapping.confirm({ select = true })";
-						"<Up>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-						"<Down>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-					};
-				};
-			};
+			#opts = {
+				#tabstop = 4;
+				#shiftwidth = 4;
+				#softtabstop = 4;
+				#expandtab = true;
+    		#};
+			enable = false;
+			#plugins = {
+				#lualine.enable = true;
+				#luasnip.enable = true;
+				#lsp = {
+					#enable = true;
+					#servers = {
+						#rust_analyzer = {
+							#enable = true;
+							#installCargo = true;
+							#installRustc = true;
+						#};
+						#jdtls.enable = true;
+						#nixd.enable = true;
+						#marksman.enable = true;
+					#};
+				#};
+				#cmp = {
+					#enable = true;
+					#autoEnableSources = true;
+					#settings.sources = [
+						#{ name = "nvim_lsp"; }
+						#{ name = "path"; }
+						#{ name = "buffer"; }
+						#{ name = "luasnip"; }
+					#];
+					#settings.mapping = {
+						#"<Tab>" = "cmp.mapping.confirm({ select = true })";
+						#"<CR>" = "cmp.mapping.confirm({ select = true })";
+						#"<Up>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+						#"<Down>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+					#};
+				##};
+			#};
 		};
 	};
 }
