@@ -46,7 +46,7 @@
 		consoleLogLevel = 0;
 		initrd.verbose = false;
 		loader = {
-			timeout = 0; # Only enable if system is completly stable. (Ha, it's not.)
+			#timeout = 0; # Only enable if system is completly stable. (Ha, it's not.)
 			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
 		};
