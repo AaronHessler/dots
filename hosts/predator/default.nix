@@ -6,7 +6,6 @@
       ./hardware.nix
     ];
 
-
   networking.hostName = "predator";
 
   environment.systemPackages = with pkgs; [
@@ -14,6 +13,11 @@
     lm_sensors
     cudatoolkit
   ];  
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 
   services.ollama = {
     package = unstable-pkgs.ollama;

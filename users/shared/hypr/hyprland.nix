@@ -233,6 +233,8 @@
         "$mainMod SHIFT, S, exec, slurp | grim -g - - | wl-copy" # p flag is actually really important!
         "$mainMod SHIFT, C, exec, hyprpicker --autocopy" # p flag is actually really important!
 
+        "$mainMod SHIFT, Q, exec, swaylock" # p flag is actually really important!
+
 
         # Example special workspace (scratchpad)
         # "$mainMod, S, togglespecialworkspace, magic"

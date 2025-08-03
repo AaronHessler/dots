@@ -10,3 +10,8 @@ vim.keymap.set('n', '<Leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>')
 
 vim.keymap.set("n", "j", "gj", { silent = true })
 vim.keymap.set("n", "k", "gk", { silent = true })
+
+vim.keymap.set('n', '<Leader>sl', ':rightbelow vsplit<CR>', { desc = 'Vertical split right' })
+vim.keymap.set('n', '<Leader>sh', ':leftabove vsplit<CR>', { desc = 'Vertical split left' })
+vim.keymap.set('n', '<Leader>sj', ':rightbelow split<CR>', { desc = 'Horizontal split below' })
+vim.keymap.set('n', '<Leader>sk', ':leftabove split<CR>', { desc = 'Horizontal split above' })

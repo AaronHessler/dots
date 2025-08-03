@@ -25,7 +25,7 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = inputs@{
@@ -40,7 +40,9 @@
 	zen-browser,
 	nixvim,
 	rust-overlay,
-	anyrun
+	quickshell,
+	anyrun,
+    spicetify-nix
 }: 
   let
   	globalUsers = import ./hosts/users/global;
@@ -75,6 +77,7 @@
 			nix-flatpak.homeManagerModules.nix-flatpak
 			stylix.homeModules.stylix
 			nixvim.homeManagerModules.nixvim
+            spicetify-nix.homeManagerModules.default
 		] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};
 	};

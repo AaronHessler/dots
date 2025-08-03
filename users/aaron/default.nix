@@ -1,4 +1,4 @@
-{ pkgs, unstable-pkgs, stateVersion, user, config, inputs, ... }: {
+{ pkgs, unstable-pkgs, config, ... }: {
 	home.packages = (with pkgs; [
 		obsidian
 		hyprpaper
@@ -6,6 +6,14 @@
 		overskride
 		figlet
 		geogebra
+
+        #gns3-gui
+        #gns3-server
+        #dynamips
+
+        mpv
+
+        devtoolbox
 
 		# AI
 		fabric-ai
@@ -80,8 +88,6 @@
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
 		inkscape
-
-		spotify
 	]);
 
 	xdg.enable = true;
@@ -96,9 +102,9 @@
 	home.file.".config/hypr/xdph.config".source = ../shared/hypr/xdph.conf;
 	home.file.".prettierrc".source = ./prettier/prettierrc.json;
 
-	home.file = {
-    	"Documents/test.txt".source = config.lib.file.mkOutOfStoreSymlink "/home/aaron/dots/test.txt";
-  	};	
+    #home.file = {
+    #"Documents/test.txt".source = config.lib.file.mkOutOfStoreSymlink "/home/aaron/dots/test.txt";
+    #};	
 
 	xdg.desktopEntries."Modrinth App" = {
 		name = "Modrinth App";
@@ -130,8 +136,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Atomic.png}";
-			wallpaper = ",${./assets/images/Atomic.png}";
+			preload = "${./assets/images/Dragonfly.png}";
+			wallpaper = ",${./assets/images/Dragonfly.png}";
 		};
 	};
 

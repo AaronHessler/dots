@@ -2,6 +2,7 @@
 let
 	hypr-conf = import ./hypr/hyprland.nix;
 	dots = "/home/aaron/dots";
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
 { 
 
@@ -24,6 +25,8 @@ in
 		papers # Document Viewer
 		gnome-usage
 		apostrophe
+        decibels
+        amberol
 
 
 		font-manager
@@ -61,17 +64,60 @@ in
 		nixd
 		lua-language-server
         vscode-langservers-extracted
+        gnumake
+        sqls
+        yaml-language-server
 
         ripgrep # telescope
 
         nodePackages.prettier
+
 	];
 
+    programs.tmux = {
+        enable = true;
+        extraConfig = ''
+            set -g base-index 1
+
+            unbind C-b        
+            set -g prefix C-a 
+            bind C-a send-prefix 
+
+            set -g status-bg black
+            set -g status-fg white
+
+            bind h select-pane -L
+            bind j select-pane -D
+            bind k select-pane -U
+            bind l select-pane -R
+
+            bind s switch-client -T split
+
+            bind -T split h split-window -h -b   # vertical split, pane on the left (back)
+            bind -T split j split-window -v -b   # horizontal split, pane below (back)
+            bind -T split k split-window -v       # horizontal split, pane above (front)
+            bind -T split l split-window -h       # vertical split, pane right (front)
+
+            set -s escape-time 1000
+        ''; 
+        plugins = [
+        ];
+    };
+
+    programs.spicetify.enable = true;
+    programs.spicetify.enabledExtensions = with spicePkgs.extensions; [
+        beautifulLyrics
+        hidePodcasts
+        shuffle
+    ];
 
 	dconf.enable = true;
 
 	programs.kitty = {
 		enable = true;
+        settings = {
+            cursor_trail = 1;
+        };
 		#font.name = "JetBrainsMono";
 	};
 
@@ -183,6 +229,12 @@ in
 			}
 		'';
 	};
+
+    programs.swaylock = {
+        enable = true;
+    };
+
+    services.swaync.enable = true;
 
 
   	wayland.windowManager.hyprland = {
