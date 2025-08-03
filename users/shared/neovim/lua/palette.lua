@@ -31,7 +31,9 @@ function M.colorscheme()
     set(0, "Identifier", { fg = colors.green })
     set(0, "Special", { fg = colors.fg })
 
+    set(0, "@tag", { fg = colors.magenta })
     set(0, "@tag.builtin", { fg = colors.red })
+    set(0, "@tag.delimiter", { fg = colors.gray })
     set(0, "@tag.attribute", { fg = colors.green })
 
     set(0, "DiagnosticError", { fg = colors.red, italic = true })
