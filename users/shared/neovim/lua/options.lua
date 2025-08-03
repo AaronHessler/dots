@@ -1,10 +1,9 @@
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.splitright = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -21,9 +20,10 @@ vim.opt.ignorecase = true
 
 vim.opt.termguicolors = true
 
-
 vim.g.mapleader = " "
 
 vim.diagnostic.config({
     virtual_lines = true,
 })
+
+vim.opt.conceallevel = 1

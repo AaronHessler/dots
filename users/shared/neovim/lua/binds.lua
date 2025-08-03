@@ -7,3 +7,6 @@ vim.keymap.set('n', '<Leader>6', '<Cmd>BufferLineGoToBuffer 7<CR>')
 vim.keymap.set('n', '<Leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>')
 vim.keymap.set('n', '<Leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>')
 vim.keymap.set('n', '<Leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>')
+
+vim.keymap.set("n", "j", "gj", { silent = true })
+vim.keymap.set("n", "k", "gk", { silent = true })

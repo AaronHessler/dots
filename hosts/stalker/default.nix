@@ -7,7 +7,6 @@
     ];
 
 
-
   networking.hostName = "stalker";
 
   environment.systemPackages = with pkgs; [

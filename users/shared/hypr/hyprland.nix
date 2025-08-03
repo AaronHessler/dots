@@ -7,7 +7,7 @@
     # Monitors
     monitor = [
         "HDMI-A-1,5120x1440@240,auto,1"
-        #"eDP-1,highres,auto,1.5"
+        "eDP-1,highres,auto,1.8"
         #",highres,auto,1.5,mirror,eDP-1" # Uncomment this line for screen mirroring
     ];
 

@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, quickshell, ... }:
+{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
 	dots = "/home/aaron/dots";
@@ -15,8 +15,6 @@ in
         # Hyprland
 		hyprland
 		hyprcursor # Check if actually neded + look where it needs to go (scope)!
-
-		quickshell.packages.${system}.default
 
 		# GNOME App Suite
 		eog # Image Viewer (Gnome)

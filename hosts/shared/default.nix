@@ -46,7 +46,7 @@
 		consoleLogLevel = 0;
 		initrd.verbose = false;
 		loader = {
-			#timeout = 0; # Only enable if system is completly stable. (Ha, it's not.)
+			timeout = 0; # Only enable if system is completly stable. (Ha, it's not.)
 			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
 		};
@@ -60,8 +60,11 @@
   	};
 
 	boot.plymouth = {
-		enable = true;
-		theme = "breeze";
+        themePackages = [
+            pkgs.adi1090x-plymouth-themes
+        ];
+		enable = false;
+		theme = "hexagon";
 	};
 
   	networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.

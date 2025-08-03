@@ -21,10 +21,6 @@
         url = "github:nix-community/nixvim";
         inputs.nixpkgs.follows = "nixpkgs";
     };
-	quickshell = {
-		url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-		inputs.nixpkgs.follows = "nixpkgs";
-    };
 	anyrun = {
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +40,6 @@
 	zen-browser,
 	nixvim,
 	rust-overlay,
-	quickshell,
 	anyrun
 }: 
   let
@@ -81,7 +76,7 @@
 			stylix.homeModules.stylix
 			nixvim.homeManagerModules.nixvim
 		] ++ modules;
-		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs quickshell;};
+		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};
 	};
 
   in
