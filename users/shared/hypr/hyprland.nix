@@ -7,7 +7,7 @@
     # Monitors
     monitor = [
         "HDMI-A-1,5120x1440@240,auto,1"
-        "eDP-1,highres,auto,1.8"
+        "eDP-1,highres,auto,1.6"
         #",highres,auto,1.5,mirror,eDP-1" # Uncomment this line for screen mirroring
     ];
 
@@ -181,7 +181,7 @@
         "$mainMod, T, exec, $terminal"
         "$mainMod, SPACE, exec, $launcher"
         "$mainMod, Q, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, M, exit,"
         "$mainMod, E, exec, $browser"
         "$mainMod, V, togglefloating,"
         "$mainMod, Z, pin,"

@@ -104,7 +104,7 @@ in
         ];
     };
 
-    programs.spicetify.enable = true;
+    programs.spicetify.enable = false;
     programs.spicetify.enabledExtensions = with spicePkgs.extensions; [
         beautifulLyrics
         hidePodcasts
@@ -165,7 +165,7 @@ in
 
 	services.xremap = {
 		enable = true;
-		withWlroots = true;
+		withHypr = true;
 		config = {
 			modmap = [
 				{
@@ -173,6 +173,7 @@ in
 					remap = {
 						CapsLock = 
 						{
+                            free_hold = true;
 							held = "leftctrl";
 							alone = "esc";
 							alone_timeout_millis = 200;

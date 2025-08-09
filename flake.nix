@@ -40,7 +40,6 @@
 	zen-browser,
 	nixvim,
 	rust-overlay,
-	quickshell,
 	anyrun,
     spicetify-nix
 }: 

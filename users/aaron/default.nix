@@ -15,25 +15,6 @@
 
         devtoolbox
 
-		# AI
-		fabric-ai
-
-		# Mail
-		protonmail-desktop
-
-
-		# Video
-        obs-studio
-
-		# Photography
-		darktable
-
-		# Gaming
-		steam
-		gamescope
-		lutris
-		modrinth-app
-
 		# Connect
 		zapzap # WhatsApp
 		vesktop
@@ -42,16 +23,6 @@
 		# Web
 		tor-browser
 		chromium
-
-		# Design
-		krita
-
-		# Coding
-		vscode
-		jetbrains.rust-rover
-		jetbrains.webstorm
-		jetbrains.idea-community-bin
-		leetcode-cli # 🗿
 
 		# Game Development
 
@@ -74,13 +45,6 @@
 		rustup
 		gcc
 		evcxr # For those analytics
-
-		# Yubikey
-		yubikey-agent
-		yubikey-manager
-		
-		# darling
-		# opendrop
 	])
 
 	++
