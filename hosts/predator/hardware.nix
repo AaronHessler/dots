@@ -13,7 +13,7 @@
   boot.kernelModules = [ "kvm-intel" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
   boot.extraModulePackages = [ ];
-  boot.kernelPackages = unstable-pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   nixpkgs.config.nvidia.acceptLicense = true;
 
@@ -23,7 +23,7 @@
 		modesetting.enable = true;
 		open = false;
 		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.beta;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
 	};
   };
 

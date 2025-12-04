@@ -6,6 +6,16 @@
 		overskride
 		figlet
 		geogebra
+        spotify
+		inkscape
+
+        obs-studio
+        darktable
+
+        fabric-ai
+
+        steam
+        lutris
 
         #gns3-gui
         #gns3-server
@@ -51,19 +61,8 @@
 
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
-		inkscape
 	]);
 
-	xdg.enable = true;
-	xdg.portal = { # For things like OBS
-		enable = true;
-		config = {
-			common.default = "hyprland";
-		};
-		extraPortals = [pkgs.xdg-desktop-portal-hyprland];
-	};
-
-	home.file.".config/hypr/xdph.config".source = ../shared/hypr/xdph.conf;
 	home.file.".prettierrc".source = ./prettier/prettierrc.json;
 
     #home.file = {
@@ -78,6 +77,17 @@
 		terminal = false;
 		type = "Application";
 		comment = "Modrinth's game launcher";
+		startupNotify = true;
+	};
+    
+	xdg.desktopEntries."Inkscape" = {
+		name = "Inkscape";
+		exec = "env GDK_BACKEND=x11 inkscape %F";
+		categories = [ "Graphics" ];
+		icon = "org.inkscape.Inkscape";
+		terminal = false;
+		type = "Application";
+		comment = "Vector graphics editor.";
 		startupNotify = true;
 	};
 
@@ -106,14 +116,21 @@
 	};
 
 	programs = {
-		git = {
-			enable = true;
-			userName = "Aaron Hessler";
-			userEmail = "aaron_hessler@outlook.de";
-			extraConfig.init = {
-				defaultBranch = "main";	
-			};
-		};
+        git = {
+            enable = true;
+            userName = "Aaron Hessler";
+            userEmail = "hello@aaronhessler.com";
+            extraConfig = {
+                credential.helper = "store";
+                core.editor = "nvim";
+                init = {
+                    defaultBranch = "main";	
+                };
+                pull = {
+                    rebase = false;
+                };
+            };
+        };
 
     	java = {
   			enable = true;

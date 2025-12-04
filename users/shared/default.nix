@@ -6,10 +6,29 @@ let
 in
 { 
 
+    imports = [
+        ./mango.nix
+    ];
+
+	xdg.enable = true;
+	xdg.portal = { # For things like OBS
+		enable = true;
+		config = {
+			hyprland.default = ["hyprland"];
+		};
+		extraPortals = [
+            pkgs.xdg-desktop-portal-hyprland
+        ];
+	};
+
+	home.file.".config/hypr/xdph.config".source = ./hypr/xdph.conf;
+
 	home.packages = with pkgs; [
 		terminaltexteffects.packages.${system}.default
-		albert # Replace?
 		fastfetch
+
+        helvum
+        easyeffects
 
 		acpi
 
@@ -21,19 +40,24 @@ in
 		eog # Image Viewer (Gnome)
 		nautilus # Files (Gnome)
 		sushi # File previewer for nautilus
-		gnome-builder # IDE
+        #gnome-builder # IDE
 		papers # Document Viewer
 		gnome-usage
 		apostrophe
         decibels
         amberol
 
+        gsettings-desktop-schemas
 
 		font-manager
 
 		# Web
 		firefox
 		inputs.zen-browser.packages."${system}".default
+
+        # Academic
+        typst
+        tinymist
 
 		# CLI Tools
 		yazi
@@ -140,7 +164,11 @@ in
 
 			hello = "print \"Hello, Universe!\"";
 
-			"'git gud'" = "echo 'Ha, nice try.'";
+            pull = "git pull";
+            push = "git push";
+            commit = "git commit";
+            status = "git status";
+            checkout = "git checkout";
 
 			download = "yt-dlp";
 			battery = "acpi -i";
@@ -218,9 +246,8 @@ in
 			maxEntries = null;
 
 			plugins = [
-				inputs.anyrun.packages.${pkgs.system}.applications
-				inputs.anyrun.packages.${pkgs.system}.symbols
-				inputs.anyrun.packages.${pkgs.system}.rink
+                "${pkgs.anyrun}/lib/libapplications.so"
+                "${pkgs.anyrun}/lib/libsymbols.so"
 			];
 
 		};
