@@ -13,6 +13,11 @@ return {
     config = function()
         vim.keymap.set("n", "<C-d>", "<cmd>Neotree toggle right<CR>")
         require("neo-tree").setup({
+            buffers = {
+                follow_current_file = {
+                    enabled = true,
+                }
+            },
             window = {
                 mappings = {
                     ["o"] = "open",
@@ -23,6 +28,12 @@ return {
                     ["on"] = "noop",
                     ["os"] = "noop",
                     ["ot"] = "noop",
+                    ["O"] = function(state)
+                        local node = state.tree:get_node()
+                        if node and node.path then
+                            vim.fn.system({ 'sushi', node.path })
+                        end
+                    end,
                 },
             },
             filesystem = {
@@ -30,6 +41,9 @@ return {
                     visible = true,
                     hide_dotfiles = false,
                     hide_gitignored = false,
+                },
+                follow_current_file = {
+                    enabled = true,
                 }
             }
         })

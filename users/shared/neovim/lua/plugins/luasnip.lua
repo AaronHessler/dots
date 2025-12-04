@@ -6,7 +6,11 @@ return {
     config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
         local ls = require("luasnip")
-        ls.filetype_extend("typescriptreact", { "javascriptreact", "html" })
+        ls.filetype_extend("typescriptreact", { "html", "javascriptreact" })
         ls.filetype_extend("javascriptreact", { "html" }) --require("luasnip").filetype_extend("typescriptreact", { "javascriptreact" })
+
+        vim.cmd [[
+            autocmd InsertLeave * lua require('luasnip').unlink_current()
+        ]]
     end
 }

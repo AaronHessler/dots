@@ -27,3 +27,6 @@ vim.diagnostic.config({
 })
 
 vim.opt.conceallevel = 1
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }

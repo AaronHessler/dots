@@ -50,8 +50,13 @@ return {
         vim.lsp.enable('yamlls')
 
         vim.lsp.enable('cssls')
+        vim.lsp.config('cssls', {
+            filetypes = { "css", "scss", "sass" }
+        })
         vim.lsp.enable('html')
         vim.lsp.enable('jsonls')
+
+        vim.lsp.enable('tinymist')
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
     end

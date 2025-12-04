@@ -1,7 +1,7 @@
 return {
     'stevearc/conform.nvim',
     opts = {
-        format_on_save = {
+        format_after_save = {
             timeout_ms = 500,
             lsp_format = "fallback",
         },
@@ -12,6 +12,7 @@ return {
             javascriptreact = { "prettier" },
             typescript = { "prettier" },
             typescriptreact = { "prettier" },
+            sass = { "sass" },
         },
     },
 }
