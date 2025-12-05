@@ -31,6 +31,10 @@ in
 
 		font-manager
 
+        # Academic
+        typst
+        tinymist
+
 		# Web
 		firefox
 		inputs.zen-browser.packages."${system}".default
@@ -59,6 +63,7 @@ in
 		swayosd
 
 		# Neovim
+        neovim
 		typescript-language-server
 		typescript
 		nixd
@@ -67,10 +72,15 @@ in
         gnumake
         sqls
         yaml-language-server
+        pkgs.pyright
+        xxd
 
         ripgrep # telescope
 
         nodePackages.prettier
+
+        # Trying this
+        nss
 
 	];
 
@@ -140,16 +150,14 @@ in
 
 			hello = "print \"Hello, Universe!\"";
 
-			"'git gud'" = "echo 'Ha, nice try.'";
-
 			download = "yt-dlp";
 			battery = "acpi -i";
 			charge = "acpi -i";
 
-			#greet = ''
-				#echo "\n"
-				#figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 unstable
-			#'';
+            #greet = ''
+            #	echo "\n"
+                #	figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 #unstable
+            #'';
 			
 			# typos be gone!
 			claer = "clear";
@@ -196,7 +204,6 @@ in
 		recursive = true;
 	};
 
-	
 	home.file = {
     	".config/nvim"= {
 			source = config.lib.file.mkOutOfStoreSymlink "${dots}/users/shared/neovim";

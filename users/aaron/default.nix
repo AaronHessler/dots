@@ -5,7 +5,16 @@
 		btop
 		overskride
 		figlet
+
+        winetricks
+        wineWowPackages.staging
+        steam
+        lutris
+
+        # Academic
 		geogebra
+        octave
+        qalculate-gtk
 
         #gns3-gui
         #gns3-server
@@ -34,6 +43,7 @@
 		# Python, Analysis
 		(python3.withPackages (ps: with ps; [
 			jupyterlab
+            watchdog
 			matplotlib
     	]))
 
@@ -109,7 +119,7 @@
 		git = {
 			enable = true;
 			userName = "Aaron Hessler";
-			userEmail = "aaron_hessler@outlook.de";
+			userEmail = "hello@aaronhessler.com";
 			extraConfig.init = {
 				defaultBranch = "main";	
 			};

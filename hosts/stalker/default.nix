@@ -9,6 +9,8 @@
 
   networking.hostName = "stalker";
 
+  services.asusd.enable = true;
+
   environment.systemPackages = with pkgs; [
   ];  
 

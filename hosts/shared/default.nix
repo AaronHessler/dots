@@ -155,7 +155,7 @@
   	};
 
 	# NOTICE: Disabled CUPS because it has a newly discovered vulnerability.
-  	#services.printing.enable = true;
+  	services.printing.enable = true;
 	services.pcscd.enable = true;
 
 
