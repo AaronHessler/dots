@@ -3,6 +3,18 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	xdg.portal = { # For things like OBS
+        wlr.enable = true;
+		enable = true;
+		config = {
+			mango.default = ["wlr" "gtk"];
+		};
+		extraPortals = [
+            pkgs.xdg-desktop-portal-wlr
+            pkgs.xdg-desktop-portal-gtk
+        ];
+	};
+
 	fonts.fontconfig = {
 		enable = true;
 		hinting = {
@@ -11,6 +23,7 @@
 		};
 		antialias = true;
 		subpixel.lcdfilter = "light";
+        subpixel.rgba = "rgb";
 	};
 
 	# Make executables work
@@ -28,6 +41,7 @@
 	hardware.uinput.enable = true;
 
 	programs.hyprland.enable = true;
+	programs.mango.enable = true;
 	services.displayManager.ly = {
 		enable = true;
 	};
@@ -69,9 +83,14 @@
 
   	networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 	networking.firewall.allowedTCPPorts = [
-		8080
 		5173 # Vite
 		4173 # Vite
+        2008 # Personal
+	];
+	networking.firewall.allowedUDPPorts = [
+		5173 # Vite
+		4173 # Vite
+        2008 # Personal
 	];
 
 	time.timeZone = "Europe/Zurich";
@@ -80,7 +99,6 @@
 
 	programs.coolercontrol = {
 		enable = true;
-		nvidiaSupport = true;
 	};
 
 	# i18n.defaultLocale = "en_US.UTF-8";

@@ -42,11 +42,18 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             default = { 'buffer', "lazydev", 'lsp', 'path', 'snippets' },
+
+            per_filetype = {
+                css = { 'snippets', 'lsp' }
+            },
             providers = {
                 lazydev = {
                     name = "LazyDev",
                     module = "lazydev.integrations.blink",
                     score_offset = 100,
+                },
+                lsp = {
+                    score_offset = 20,
                 },
                 snippets = {
                     score_offset = 10,

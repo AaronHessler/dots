@@ -4,7 +4,7 @@ return {
     version = '1.*',
     opts = {
         dependencies_bin = {
-            ["tinymist"] = nil
+            ["tinymist"] = nil,
         }
     }, -- lazy.nvim will implicitly calls `setup {}`
 }

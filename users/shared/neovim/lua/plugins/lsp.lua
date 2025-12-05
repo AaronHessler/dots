@@ -50,6 +50,9 @@ return {
         vim.lsp.enable('yamlls')
 
         vim.lsp.enable('cssls')
+        vim.lsp.config('cssls', {
+            filetypes = { "css", "scss", "sass" }
+        })
         vim.lsp.enable('html')
         vim.lsp.enable('jsonls')
 

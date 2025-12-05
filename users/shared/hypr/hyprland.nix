@@ -6,13 +6,14 @@
 
     # Monitors
     monitor = [
-        "HDMI-A-1,5120x1440@240,auto,1"
+        #"HDMI-A-1,5120x1440@240,auto,1"
         "eDP-1,highres,auto,1.6"
         #",highres,auto,1.5,mirror,eDP-1" # Uncomment this line for screen mirroring
     ];
 
     xwayland = {
-        force_zero_scaling = true;
+        enabled = true;
+        force_zero_scaling = false;
     };
 
 
@@ -157,6 +158,7 @@
     input = {
         kb_layout = "ch";
         #kb_variant = "ch";
+        numlock_by_default = true; # to make numpad behave more normally
         
         follow_mouse = 1;
         sensitivity = 0; # 0 means no modification
@@ -194,10 +196,10 @@
         "$mainMod SHIFT, K, resizeactive, 0 -30"
         "$mainMod SHIFT, J, resizeactive, 0 30"
 
-        "$mainMod ALT, H, movewindow, l"
-        "$mainMod ALT, L, movewindow, r"
-        "$mainMod ALT, K, movewindow, u"
-        "$mainMod ALT, J, movewindow, d"
+        "$mainMod CTRL, H, movewindow, l"
+        "$mainMod CTRL, L, movewindow, r"
+        "$mainMod CTRL, K, movewindow, u"
+        "$mainMod CTRL, J, movewindow, d"
 
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
@@ -215,6 +217,8 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+
+        "$mainMod, TAB, workspace, e+1"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
