@@ -35,6 +35,7 @@
 		chromium
 
 		# Game Development
+        godotPackages_4_4.godot
 
 		# JS Development
 		deno # JS Runtime
