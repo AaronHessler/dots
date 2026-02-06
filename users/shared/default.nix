@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, ... }:
+{ pkgs, lib, unstable-pkgs, stateVersion, inputs, user, terminaltexteffects, config, system, ... }:
 let
 	hypr-conf = import ./hypr/hyprland.nix;
 	dots = "/home/aaron/dots";
@@ -7,30 +7,25 @@ in
 { 
 
     imports = [
-        ./mango.nix
     ];
 
 	xdg.enable = true;
-	xdg.portal = { # For things like OBS
+	xdg.portal = {
 		enable = true;
 		config = {
-			hyprland.default = ["hyprland"];
+            common.default = ["gtk"];
+			hyprland.default = ["hyprland" "gtk"];
 		};
 		extraPortals = [
             pkgs.xdg-desktop-portal-hyprland
+            pkgs.xdg-desktop-portal-gtk
         ];
 	};
 
 	home.file.".config/hypr/xdph.config".source = ./hypr/xdph.conf;
 
-	home.packages = with pkgs; [
+	home.packages = (with pkgs; [
 		terminaltexteffects.packages.${system}.default
-		fastfetch
-
-        helvum
-        easyeffects
-
-		acpi
 
         # Hyprland
 		hyprland
@@ -50,21 +45,18 @@ in
         gsettings-desktop-schemas
 
 		font-manager
-
 		# Web
 		firefox
 		inputs.zen-browser.packages."${system}".default
 
-        # Academic
-        typst
-        tinymist
-
 		# CLI Tools
 		yazi
-		git # Move
-		yt-dlp
+        git
+        gitoxide
 		tree
 		openssl
+		fastfetch
+		acpi
 
         # Screenshots
 		slurp
@@ -82,7 +74,8 @@ in
 		pamixer
 		swayosd
 
-		# Neovim
+		# Neovim (Language Servers)
+        neovim
 		typescript-language-server
 		typescript
 		nixd
@@ -91,12 +84,42 @@ in
         gnumake
         sqls
         yaml-language-server
+        pkgs.pyright
+        xxd
+        tinymist
+        glslls
+
+        # Spellcheck
+        hunspell
+        hunspellDicts.de_CH
 
         ripgrep # telescope
-
         nodePackages.prettier
 
-	];
+        flatpak
+
+	])
+
+	++
+
+	(with unstable-pkgs; [
+            yt-dlp
+	]);
+
+    programs.niri = {
+        package = pkgs.niri;
+        enable = true;
+
+        config = ''
+            binds {
+                Super+T repeat=false { spawn "kitty"; }
+                Super+K repeat=false { spawn "kitty"; }
+            }
+            input {
+                focus-follows-mouse
+            }
+        '';
+    };
 
     programs.tmux = {
         enable = true;
@@ -174,10 +197,10 @@ in
 			battery = "acpi -i";
 			charge = "acpi -i";
 
-			#greet = ''
-				#echo "\n"
-				#figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 unstable
-			#'';
+            #greet = ''
+            #	echo "\n"
+                #	figlet 'Welcome back ${user}' -f cybersmall | tte --no-color --frame-rate 120 #unstable
+            #'';
 			
 			# typos be gone!
 			claer = "clear";
@@ -224,7 +247,6 @@ in
 		recursive = true;
 	};
 
-	
 	home.file = {
     	".config/nvim"= {
 			source = config.lib.file.mkOutOfStoreSymlink "${dots}/users/shared/neovim";
@@ -248,6 +270,8 @@ in
 			plugins = [
                 "${pkgs.anyrun}/lib/libapplications.so"
                 "${pkgs.anyrun}/lib/libsymbols.so"
+                "${pkgs.anyrun}/lib/librink.so"
+                "${pkgs.anyrun}/lib/libdictionary.so"
 			];
 
 		};
@@ -284,9 +308,6 @@ in
 			#name = "Posy_Cursor"; # Shout out to @Posy on youtube. Absolute artist.
 			#package = pkgs.posy-cursors;
 		#};
-		sessionVariables = {
-			#HYPRCURSOR_THEME = "Posy_Cursor";
-		};
 
 	};
 

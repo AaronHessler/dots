@@ -56,7 +56,11 @@ return {
         vim.lsp.enable('html')
         vim.lsp.enable('jsonls')
 
+        vim.lsp.enable('pyright')
+
         vim.lsp.enable('tinymist')
+
+        vim.lsp.enable('glslls')
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
     end

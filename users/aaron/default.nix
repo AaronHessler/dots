@@ -5,29 +5,34 @@
 		btop
 		overskride
 		figlet
-		geogebra
-        spotify
 		inkscape
-
-        obs-studio
-        darktable
-
         fabric-ai
-
+        darktable
+        #winetricks
+        #wineWowPackages.staging
+        #lutris
         steam
         lutris
+        ntfy-sh
+        vpkedit
+        obs-studio
 
-        #gns3-gui
-        #gns3-server
-        #dynamips
+        # Academic
+		geogebra
+        qalculate-gtk
+        octave
+        typst
 
+        # Media
         mpv
+        spotify
 
+
+        # Tooling
         devtoolbox
+        nss
 
 		# Connect
-		zapzap # WhatsApp
-		vesktop
 		ferdium
 
 		# Web
@@ -36,6 +41,7 @@
 
 		# Game Development
         godotPackages_4_4.godot
+        glslviewer
 
 		# JS Development
 		deno # JS Runtime
@@ -45,6 +51,7 @@
 		# Python, Analysis
 		(python3.withPackages (ps: with ps; [
 			jupyterlab
+            watchdog
 			matplotlib
     	]))
 
@@ -62,6 +69,8 @@
 
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
+        audacity
+		vesktop
 	]);
 
 	home.file.".prettierrc".source = ./prettier/prettierrc.json;
@@ -111,8 +120,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Dragonfly.png}";
-			wallpaper = ",${./assets/images/Dragonfly.png}";
+			preload = "${./assets/images/International.png}";
+			wallpaper = ",${./assets/images/International.png}";
 		};
 	};
 

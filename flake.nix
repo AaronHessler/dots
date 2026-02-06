@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    mango.url = "github:DreamMaoMao/mango";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = inputs@{
@@ -43,7 +43,7 @@
 	rust-overlay,
 	anyrun,
     spicetify-nix,
-    mango
+    niri,
 }: 
   let
   	globalUsers = import ./hosts/users/global;
@@ -59,7 +59,7 @@
 	}: nixpkgs.lib.nixosSystem {
 		specialArgs = { inherit stateVersion system unstable-pkgs; };
 		inherit system;
-		modules = [ globalUsers sharedHost mango.nixosModules.mango ] ++ modules;
+		modules = [ globalUsers sharedHost ] ++ modules;
 	};
 
 	mkHome = {
@@ -79,7 +79,7 @@
 			stylix.homeModules.stylix
 			nixvim.homeManagerModules.nixvim
             spicetify-nix.homeManagerModules.default
-            mango.hmModules.mango
+            niri.homeModules.niri
 		] ++ modules;
 		extraSpecialArgs = {inherit stateVersion user inputs terminaltexteffects system unstable-pkgs;};
 	};

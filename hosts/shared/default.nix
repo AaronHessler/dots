@@ -6,11 +6,8 @@
 	xdg.portal = { # For things like OBS
         wlr.enable = true;
 		enable = true;
-		config = {
-			mango.default = ["wlr" "gtk"];
-		};
 		extraPortals = [
-            pkgs.xdg-desktop-portal-wlr
+            pkgs.xdg-desktop-portal-hyprland
             pkgs.xdg-desktop-portal-gtk
         ];
 	};
@@ -41,7 +38,6 @@
 	hardware.uinput.enable = true;
 
 	programs.hyprland.enable = true;
-	programs.mango.enable = true;
 	services.displayManager.ly = {
 		enable = true;
 	};
@@ -99,7 +95,6 @@
 
 	programs.coolercontrol = {
 		enable = true;
-		nvidiaSupport = true;
 	};
 
 	# i18n.defaultLocale = "en_US.UTF-8";
@@ -125,7 +120,6 @@
 		libva
 		ffmpeg-full
 
-		flatpak
 		ncurses
   	];  
 
@@ -174,7 +168,7 @@
   	};
 
 	# NOTICE: Disabled CUPS because it has a newly discovered vulnerability.
-  	#services.printing.enable = true;
+  	services.printing.enable = true;
 	services.pcscd.enable = true;
 
 
