@@ -19,8 +19,8 @@
 
     # Environment
     "$terminal" = "kitty";
-    "$browser" = "zen";
-    "$launcher" = "anyrun";
+    "$browser" = "zen-beta";
+    "$launcher" = "nwg-drawer --open";
 
     exec-once = [
         # Startup apps
@@ -30,7 +30,7 @@
         #"[workspace 1 silent] $browser"
 
         # Start Albert
-        "albert"
+        "nwg-drawer -ovl -nofs -r"
 
         # SwayOSD for volume notifications
         "swayosd-server"
@@ -58,6 +58,7 @@
 
     layerrule = [
         "animation slide, anyrun"
+        "animation slide bottom, nwg-drawer"
     ];
 
     # Look and Feel
@@ -172,9 +173,9 @@
         };
     };
     
-    gestures = {
-        workspace_swipe = true;
-    };
+    #gestures = {
+    #workspace_swipe = true;
+    #};
 
     # TODO: Migrate all of this to xremap ):
     "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
@@ -235,6 +236,7 @@
         # Screenshot
 
         "$mainMod SHIFT, S, exec, slurp | grim -g - - | wl-copy" # p flag is actually really important!
+        "$mainMod CTRL, S, exec, kooha" # p flag is actually really important!
         "$mainMod SHIFT, C, exec, hyprpicker --autocopy" # p flag is actually really important!
 
         "$mainMod SHIFT, Q, exec, swaylock" # p flag is actually really important!
@@ -251,9 +253,9 @@
         "$mainMod, period, exec, emote"
 
         # Media
-        "$mainMod, right, exec, playerctl next"
-        "$mainMod, left, exec, playerctl previous"
-        "$mainMod, down, exec, playerctl play-pause"
+        "$mainMod, right, exec, playerctl -p spotify next"
+        "$mainMod, left, exec, playerctl -p spotfy previous"
+        "$mainMod, down, exec, playerctl -p spotify play-pause"
 
         ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume raise"
         ",XF86AudioLowerVolume,exec,swayosd-client --output-volume lower"

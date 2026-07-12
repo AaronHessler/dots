@@ -6,6 +6,10 @@
 	xdg.portal = { # For things like OBS
         wlr.enable = true;
 		enable = true;
+		config = {
+            common.default = ["gtk"];
+			hyprland.default = ["hyprland" "gtk"];
+		};
 		extraPortals = [
             pkgs.xdg-desktop-portal-hyprland
             pkgs.xdg-desktop-portal-gtk

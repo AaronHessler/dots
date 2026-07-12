@@ -5,17 +5,22 @@
 		btop
 		overskride
 		figlet
-		inkscape
         fabric-ai
+        ntfy-sh
+        obs-studio
+
+        # Creative
         darktable
+		inkscape
+        gimp
+        krita
+
+        # Gaming
         #winetricks
         #wineWowPackages.staging
         #lutris
         steam
         lutris
-        ntfy-sh
-        vpkedit
-        obs-studio
 
         # Academic
 		geogebra
@@ -31,6 +36,9 @@
         # Tooling
         devtoolbox
         nss
+
+        # Programming
+        zed-editor
 
 		# Connect
 		ferdium
@@ -63,14 +71,18 @@
 		rustup
 		gcc
 		evcxr # For those analytics
+
 	])
 
 	++
 
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
+        #vesktop # borked
+        modrinth-app
+        #webcord
+        vesktop
         audacity
-		vesktop
 	]);
 
 	home.file.".prettierrc".source = ./prettier/prettierrc.json;
@@ -81,7 +93,7 @@
 
 	xdg.desktopEntries."Modrinth App" = {
 		name = "Modrinth App";
-		exec = "env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 ModrinthApp";
+		exec = "env __NV_DISABLE_EXPLICIT_SYNC=1 WEBKIT_DISABLE_DMABUF_RENDERER=1 ModrinthApp";
 		categories = [ "Game" "ActionGame" "AdventureGame" "Simulation" ];
 		icon = "ModrinthApp";
 		terminal = false;
@@ -128,9 +140,8 @@
 	programs = {
         git = {
             enable = true;
-            userName = "Aaron Hessler";
-            userEmail = "hello@aaronhessler.com";
-            extraConfig = {
+
+            settings = {
                 credential.helper = "store";
                 core.editor = "nvim";
                 init = {
@@ -138,6 +149,11 @@
                 };
                 pull = {
                     rebase = false;
+                };
+                user = {
+                    name = "Aaron Hessler";
+                    email = "hello@aaronhessler.com";
+
                 };
             };
         };

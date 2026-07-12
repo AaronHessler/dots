@@ -20,15 +20,14 @@
   };
 
   services.ollama = {
-    package = unstable-pkgs.ollama;
+    package = unstable-pkgs.ollama-cuda;
     enable = true;
-    acceleration = "cuda";
   };
 
    users.extraGroups.vboxusers.members = [ "aaron" ];
 
    programs.coolercontrol.enable = true;
-   programs.coolercontrol.nvidiaSupport = true;
+    #programs.coolercontrol.nvidiaSupport = true; # Deprecated
 
 
 		#pulseaudio.support32Bit = true; # Enable sound

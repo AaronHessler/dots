@@ -44,10 +44,11 @@ in
 
         gsettings-desktop-schemas
 
-		font-manager
+        gnome-font-viewer
 		# Web
 		firefox
 		inputs.zen-browser.packages."${system}".default
+        inputs.helium.packages.${system}.default
 
 		# CLI Tools
 		yazi
@@ -58,10 +59,11 @@ in
 		fastfetch
 		acpi
 
-        # Screenshots
+        # Screenshots & Recording
 		slurp
 		grim
 		wl-clipboard
+
 
 		# Color Picker
 		hyprpicker
@@ -74,7 +76,7 @@ in
 		pamixer
 		swayosd
 
-		# Neovim (Language Servers)
+		# Neovim (+ Language Servers)
         neovim
 		typescript-language-server
 		typescript
@@ -98,12 +100,15 @@ in
 
         flatpak
 
+        nwg-drawer
+
 	])
 
 	++
 
 	(with unstable-pkgs; [
             yt-dlp
+            kooha
 	]);
 
     programs.niri = {
@@ -246,6 +251,8 @@ in
 		source = "${./fastfetch}";
 		recursive = true;
 	};
+    
+	home.file.".config/nwg-drawer/drawer.css".source = "${./nwg-drawer.css}";
 
 	home.file = {
     	".config/nvim"= {
@@ -254,6 +261,7 @@ in
   	};	
 
 	programs.anyrun = {
+        package = pkgs.anyrun;
 		enable = true;
 		config = {
 			x = { fraction = 0.5; };
@@ -269,9 +277,9 @@ in
 
 			plugins = [
                 "${pkgs.anyrun}/lib/libapplications.so"
-                "${pkgs.anyrun}/lib/libsymbols.so"
-                "${pkgs.anyrun}/lib/librink.so"
-                "${pkgs.anyrun}/lib/libdictionary.so"
+                #"${pkgs.anyrun}/lib/libsymbols.so"
+                #"${pkgs.anyrun}/lib/librink.so"
+                #"${pkgs.anyrun}/lib/libdictionary.so"
 			];
 
 		};

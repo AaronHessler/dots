@@ -1,4 +1,0 @@
-return {
-    "pandasoli/nekovim",
-    opts = {},
-}
