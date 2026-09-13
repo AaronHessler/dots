@@ -254,7 +254,7 @@
 
         # Media
         "$mainMod, right, exec, playerctl -p spotify next"
-        "$mainMod, left, exec, playerctl -p spotfy previous"
+        "$mainMod, left, exec, playerctl -p spotify previous"
         "$mainMod, down, exec, playerctl -p spotify play-pause"
 
         ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume raise"

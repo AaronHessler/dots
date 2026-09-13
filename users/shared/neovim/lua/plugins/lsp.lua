@@ -62,6 +62,8 @@ return {
 
         vim.lsp.enable('glslls')
 
+        vim.lsp.enable('hls')
+
         vim.keymap.set('n', 'K', vim.lsp.buf.hover)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
     end

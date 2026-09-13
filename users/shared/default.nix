@@ -6,9 +6,6 @@ let
 in
 { 
 
-    imports = [
-    ];
-
 	xdg.enable = true;
 	xdg.portal = {
 		enable = true;
@@ -90,6 +87,7 @@ in
         xxd
         tinymist
         glslls
+        haskell-language-server
 
         # Spellcheck
         hunspell
@@ -114,16 +112,6 @@ in
     programs.niri = {
         package = pkgs.niri;
         enable = true;
-
-        config = ''
-            binds {
-                Super+T repeat=false { spawn "kitty"; }
-                Super+K repeat=false { spawn "kitty"; }
-            }
-            input {
-                focus-follows-mouse
-            }
-        '';
     };
 
     programs.tmux = {
@@ -182,6 +170,7 @@ in
 		enable = true;
 		shellAliases = {
 			nixup = "nh os switch";
+			sysup = "nh os switch";
 			homeup = "nh home switch";
 			hy = "Hyprland";
 			nv = "nvim";
@@ -189,6 +178,7 @@ in
 			bye = "shutdown now";
 			cya = "systemctl hibernate";
 			neofetch = "fastfetch";
+            lgit = "lazygit";
 
 			hello = "print \"Hello, Universe!\"";
 

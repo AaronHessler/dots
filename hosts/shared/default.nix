@@ -86,6 +86,7 @@
 		5173 # Vite
 		4173 # Vite
         2008 # Personal
+        3000
 	];
 	networking.firewall.allowedUDPPorts = [
 		5173 # Vite

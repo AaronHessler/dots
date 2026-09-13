@@ -7,13 +7,14 @@
 		figlet
         fabric-ai
         ntfy-sh
-        obs-studio
 
         # Creative
         darktable
 		inkscape
         gimp
         krita
+        kdePackages.glaxnimate
+        kdePackages.kdenlive
 
         # Gaming
         #winetricks
@@ -21,6 +22,7 @@
         #lutris
         steam
         lutris
+        gamescope
 
         # Academic
 		geogebra
@@ -36,9 +38,11 @@
         # Tooling
         devtoolbox
         nss
+        lazygit
 
         # Programming
         zed-editor
+        opencode # Hey, I don't vibe code!
 
 		# Connect
 		ferdium
@@ -72,18 +76,38 @@
 		gcc
 		evcxr # For those analytics
 
+        # Haskell Development
+        ghc
+        cabal-install
+        stack
+
+        vesktop # borked
 	])
 
 	++
 
 	(with unstable-pkgs; [
 		#figma-agent # F*ck you so much
-        #vesktop # borked
-        modrinth-app
-        #webcord
-        vesktop
-        audacity
+            #modrinth-app
+            audacity
+            cdrkit
 	]);
+
+    programs.obs-studio = {
+        enable = true;
+
+        package = (
+            pkgs.obs-studio.override {
+                cudaSupport = true;
+            }
+        );
+
+        plugins = with pkgs.obs-studio-plugins; [
+            wlrobs
+            obs-pipewire-audio-capture
+            obs-vkcapture
+        ];
+    };
 
 	home.file.".prettierrc".source = ./prettier/prettierrc.json;
 
@@ -132,8 +156,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/International.png}";
-			wallpaper = ",${./assets/images/International.png}";
+			preload = "${./assets/images/Opium.png}";
+			wallpaper = ",${./assets/images/Opium.png}";
 		};
 	};
 
