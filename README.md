@@ -18,7 +18,7 @@ ApexOS uses [Nushell](https://www.nushell.sh/)
 
 ### Aliases
 
-- `nixup`: Rebuild the system configuration.
+- `sysup`: Rebuild the system configuration.
 - `homeup`: Rebuild the home configuration.
 - `download`: Download a video from a website of your choice.
 - `hy`: Launch Hyprland.

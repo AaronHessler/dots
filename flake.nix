@@ -4,15 +4,15 @@
     inputs = {
 
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
         home-manager = {
-            url = "github:nix-community/home-manager/release-25.11";
+            url = "github:nix-community/home-manager/release-26.05";
             inputs.nixpkgs.follows = "nixpkgs";
         };
         xremap.url = "github:xremap/nix-flake";
         terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/";
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-        stylix.url = "github:danth/stylix/release-25.11";
+        stylix.url = "github:danth/stylix/release-26.05";
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
         helium = {
             url = "github:schembriaiden/helium-browser-nix-flake";

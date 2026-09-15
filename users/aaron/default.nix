@@ -156,8 +156,13 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = "${./assets/images/Opium.png}";
-			wallpaper = ",${./assets/images/Opium.png}";
+			preload = [ "${./assets/images/Opium.png}" ];
+            splash = false; # Motherf\*cker why is this `true` the default?
+			wallpaper = [ {
+                monitor = "";
+                path = "${./assets/images/Opium.png}";
+                fit_mode = "cover";
+            } ];
 		};
 	};
 

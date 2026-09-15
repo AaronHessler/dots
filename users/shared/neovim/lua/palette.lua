@@ -70,6 +70,9 @@ function M.colorscheme()
     set(0, "NotifyINFOIcon", { fg = colors.blue })
     set(0, "NotifyINFOTitle", { fg = colors.blue })
     set(0, "NotifyINFOBorder", { fg = colors.blue })
+
+    -- Language Specific Corrections
+    set(0, "typescriptEndColons", { fg = colors.fg })
 end
 
 return M

@@ -1,6 +1,7 @@
 return {
     "3rd/image.nvim",
-    build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+    build = false,   -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+    enabled = false, -- TURNED OFF !!!
     commit = "4206c48a9f764a63f43022d6ab90ec04946bbc68",
     opts = {
 
@@ -8,7 +9,7 @@ return {
         processor = "magick_cli", -- or "magick_rock"
         integrations = {
             markdown = {
-                enabled = true,
+                enabled = false, -- TURNED OFF BECAUSE 0.12 IS ANNOYING
                 clear_in_insert_mode = false,
                 download_remote_images = true,
                 only_render_image_at_cursor = false,

@@ -75,6 +75,7 @@ in
 
 		# Neovim (+ Language Servers)
         neovim
+        tree-sitter
 		typescript-language-server
 		typescript
 		nixd
@@ -94,7 +95,7 @@ in
         hunspellDicts.de_CH
 
         ripgrep # telescope
-        nodePackages.prettier
+        prettier
 
         flatpak
 

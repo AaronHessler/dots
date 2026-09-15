@@ -38,7 +38,7 @@
         "systemctl start --user hyprpaper"
     ];
 
-    windowrulev2 = [
+    windowrulev = [
         "float,class:(com.aaron.dev)"
         "float,class:(albert) title:(albert)"
         "noborder,class:(albert) title:(albert)"
@@ -57,8 +57,8 @@
     ];
 
     layerrule = [
-        "animation slide, anyrun"
-        "animation slide bottom, nwg-drawer"
+        "match:namespace ^(anyrun)$, animation slide"
+        "match:namespace ^(nwg-drawer)$, animation slide bottom"
     ];
 
     # Look and Feel
@@ -137,7 +137,7 @@
     };
 
     dwindle = {
-        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        #pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # You probably want this 
     };
 
@@ -148,6 +148,7 @@
     misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
+        disable_splash_rendering = true;
     };
 
     device = {
